@@ -51,18 +51,17 @@ const ProductType = (props: Props) => {
         </div>
       </div>
       <div className="product-type">
-        <div className="img-wrapper">
-          <Image
-            src={earphonesShop}
-            alt="headphones"
-            layout="intrinsic"
-            objectFit="contain"
-            objectPosition="center"
-          />
-        </div>
+        <Image
+          src={earphonesShop}
+          alt="headphones"
+          layout="intrinsic"
+          objectFit="contain"
+          objectPosition="center"
+        />
+
         <div className="description-bg"></div>
         <div className="product-description">
-          <p>Headphones</p>
+          <p>Earphones</p>
           <Link href="/earphones">
             <a>
               shop <span>{">"}</span>

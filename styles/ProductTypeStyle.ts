@@ -25,13 +25,7 @@ export const Type = styled.section`
     justify-content: flex-end;
     text-align: center;
     position: relative;
-    .img-wrapper {
-      position: absolute;
-      /* width: 100%; */
-      bottom: 38%;
-      left: 38%;
-      filter: drop-shadow(0 50px 50px);
-    }
+
     a:hover {
       color: ${({ theme }) => theme.colors.primary};
     }

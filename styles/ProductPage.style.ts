@@ -9,6 +9,7 @@ export const ProductStyle = styled.div`
   padding-left: 10%;
   padding-right: 10%;
   margin-bottom: 10rem;
+  z-index: -1;
   .page-title {
     flex: 1 1 100%;
     text-transform: uppercase;

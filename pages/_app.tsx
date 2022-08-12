@@ -6,19 +6,24 @@ import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
+import { AuthContextProvider } from "../context/AuthContext";
+import Cart from "../components/Cart";
+import { CartContextProvider } from "../context/CartContext";
 
 config.autoAddCss = false;
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <>
-      <GlobalStyle />
-      <SCThemeProvider theme={myTheme}>
-        <Navigation />
-        <Component {...pageProps} />
-        <Footer />
-      </SCThemeProvider>
-    </>
+    <AuthContextProvider>
+      <CartContextProvider>
+        <GlobalStyle />
+        <SCThemeProvider theme={myTheme}>
+          <Navigation />
+          <Component {...pageProps} />
+          <Footer />
+        </SCThemeProvider>
+      </CartContextProvider>
+    </AuthContextProvider>
   );
 }
 

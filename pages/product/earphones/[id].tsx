@@ -1,7 +1,7 @@
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import React, { useState } from "react";
 import { db } from "../../../clientApp";
-
+import { Product } from "../../../components/interface/interfaces";
 import { collection, doc, getDoc, getDocs } from "firebase/firestore";
 import {
   Features,
@@ -11,16 +11,6 @@ import {
 import ProductType from "../../../components/ProductType";
 import Info from "../../../components/Info";
 import { Button } from "../../../styles/Button.style";
-
-interface Product {
-  name: string;
-  secondFeature: string;
-  firstFeature: string;
-  description: string;
-  img: string;
-  price: string;
-  id: string;
-}
 
 const Details: NextPage<{ product: Product }> = ({ product }: any) => {
   const newProduct = JSON.parse(product);
@@ -66,24 +56,24 @@ const Details: NextPage<{ product: Product }> = ({ product }: any) => {
           <h3>in the box</h3>
           <div className="box-content">
             <div className="content">
-              <p className="count">1X</p>
-              <p className="item">headphone unit</p>
+              <p className="count">2X</p>
+              <p className="item">Earphone Unit</p>
+            </div>
+            <div className="content">
+              <p className="count">6X</p>
+              <p className="item">Multi-size Earplugs</p>
             </div>
             <div className="content">
               <p className="count">1X</p>
-              <p className="item">headphone unit</p>
+              <p className="item">users manual</p>
             </div>
             <div className="content">
               <p className="count">1X</p>
-              <p className="item">headphone unit</p>
+              <p className="item">USB-C Charging Cable</p>
             </div>
             <div className="content">
               <p className="count">1X</p>
-              <p className="item">headphone unit</p>
-            </div>
-            <div className="content">
-              <p className="count">1X</p>
-              <p className="item">headphone unit</p>
+              <p className="item">Travel Pouch</p>
             </div>
           </div>
         </div>

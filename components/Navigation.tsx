@@ -8,6 +8,7 @@ import {
   faClose,
   faBars,
 } from "@fortawesome/free-solid-svg-icons";
+import Cart from "./Cart";
 type Props = {};
 
 const Navigation = (props: Props) => {
@@ -15,8 +16,15 @@ const Navigation = (props: Props) => {
   const menuToggle = () => {
     setActive(!active);
   };
+
+  const [open, setOpen] = useState<boolean>(false);
+  const openCart = () => {
+    setOpen(!open);
+  };
   return (
     <Nav>
+      {open ? <Cart /> : null}
+
       <div className="menu-buttons">
         <button className="menu" onClick={menuToggle}>
           <FontAwesomeIcon icon={active ? faClose : faBars} className="menu" />
@@ -48,7 +56,7 @@ const Navigation = (props: Props) => {
       </nav>
 
       <div className="cart">
-        <button>
+        <button onClick={openCart}>
           <img src="/cart.png" alt="" />
         </button>
       </div>

@@ -1,7 +1,7 @@
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import React, { useState } from "react";
 import { db } from "../../../clientApp";
-
+import { Product } from "../../../components/interface/interfaces";
 import { collection, doc, getDoc, getDocs } from "firebase/firestore";
 import {
   Features,
@@ -11,20 +11,14 @@ import {
 import ProductType from "../../../components/ProductType";
 import Info from "../../../components/Info";
 import { Button } from "../../../styles/Button.style";
-
-interface Product {
-  name: string;
-  secondFeature: string;
-  firstFeature: string;
-  description: string;
-  img: string;
-  price: string;
-  id: string;
-}
+import { useCart } from "../../../context/CartContext";
 
 const Details: NextPage<{ product: Product }> = ({ product }: any) => {
+  const { cart, addItem } = useCart();
+  console.log("this is the cart", cart);
   const newProduct = JSON.parse(product);
   const [count, setCount] = useState<number>(1);
+  const [item, setItem] = useState<Product>(newProduct);
   const increment = () => {
     setCount(count + 1);
   };
@@ -34,6 +28,7 @@ const Details: NextPage<{ product: Product }> = ({ product }: any) => {
       setCount(count - 1);
     }
   };
+
   return (
     <>
       <ProductInfoStyle>
@@ -51,7 +46,9 @@ const Details: NextPage<{ product: Product }> = ({ product }: any) => {
                 <Button onClick={decrement}>-</Button>
                 {count} <Button onClick={increment}>+</Button>
               </div>
-              <Button primary={true}>add to cart</Button>
+              <Button primary={true} onClick={addItem(item)}>
+                add to cart
+              </Button>
             </div>
           </div>
         </div>
@@ -70,20 +67,20 @@ const Details: NextPage<{ product: Product }> = ({ product }: any) => {
               <p className="item">headphone unit</p>
             </div>
             <div className="content">
-              <p className="count">1X</p>
-              <p className="item">headphone unit</p>
+              <p className="count">2X</p>
+              <p className="item">Replacement Earcups</p>
             </div>
             <div className="content">
               <p className="count">1X</p>
-              <p className="item">headphone unit</p>
+              <p className="item">User Manual</p>
             </div>
             <div className="content">
               <p className="count">1X</p>
-              <p className="item">headphone unit</p>
+              <p className="item">3.5mm 5m Audio Cable</p>
             </div>
             <div className="content">
               <p className="count">1X</p>
-              <p className="item">headphone unit</p>
+              <p className="item">Travel Bag</p>
             </div>
           </div>
         </div>

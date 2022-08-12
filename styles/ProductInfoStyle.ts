@@ -100,23 +100,16 @@ export const ProductInfoStyle = styled.div`
 export const Features = styled.div`
   display: flex;
   box-sizing: border-box;
-  /* padding-left: 10%;
-  padding-right: 10%; */
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 10rem;
   max-width: 1600px;
   gap: 7.8125rem;
   .product-features {
-    flex: 0 1 50%;
+    flex: 0 1 75%;
     box-sizing: border-box;
-    .right {
-      .buttons {
-        button {
-          white-space: nowrap;
-        }
-      }
-    }
+    padding-right: 100px;
+
     h3 {
       text-transform: uppercase;
       margin-bottom: 3rem;
@@ -126,10 +119,10 @@ export const Features = styled.div`
     }
   }
   .box-features {
-    flex: 0 1 50%;
+    flex: 0 1 25%;
     display: flex;
     flex-direction: column;
-    text-align: center;
+    text-align: left;
     h3 {
       text-transform: uppercase;
       margin-bottom: 3rem;
@@ -137,6 +130,8 @@ export const Features = styled.div`
     .box-content {
       display: flex;
       flex-direction: column;
+      display: inline-block;
+      text-align: left;
       .content {
         margin-bottom: 0.5rem;
         p:first-child {
@@ -162,12 +157,9 @@ export const Features = styled.div`
         padding-right: 1%;
         text-align: center;
         .buttons {
-          // text-align: center;
           display: inline;
           .counter {
             display: inline;
-            // height: 100%;
-            // box-sizing: border-box;
             margin-right: 1rem;
             padding-block: 0.9rem;
             button {
@@ -187,8 +179,6 @@ export const Features = styled.div`
 export const ProductPhotos = styled.div`
   display: flex;
   box-sizing: border-box;
-  /* padding-left: 10%;
-  padding-right: 10%; */
   max-width: 1600px;
   gap: 1rem;
 
