@@ -27,7 +27,7 @@ const Product: NextPage = ({ products }: any) => {
               </div>
               <div className="right">
                 <p>new product</p>
-                <h2>{product.name}</h2>
+                <h2>{product.name} speaker</h2>
                 <p>{product.description}</p>
                 <Button primary={true}>
                   <Link href={`product/speakers/${product.id}`}>

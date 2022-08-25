@@ -1,15 +1,14 @@
-import { GetStaticPaths, NextPage } from "next";
+import { NextPage } from "next";
 import { Button } from "../styles/Button.style";
 import { ProductDescription, ProductStyle } from "../styles/ProductPage.style";
 import Link from "next/link";
 import Info from "../components/Info";
 import ProductType from "../components/ProductType";
 import { db } from "../clientApp";
-
-import { collection, doc, getDoc, getDocs } from "firebase/firestore";
+import { collection, getDocs } from "firebase/firestore";
 
 const Product: NextPage = ({ products }: any) => {
-  console.log(products);
+  // console.log(products);
   return (
     <>
       <ProductStyle>
@@ -27,7 +26,7 @@ const Product: NextPage = ({ products }: any) => {
               </div>
               <div className="right">
                 <p>new product</p>
-                <h2>{product.name}</h2>
+                <h2>{product.name} headphones</h2>
                 <p>{product.description}</p>
                 <Button primary={true}>
                   <Link href={`product/headphones/${product.id}`}>
@@ -54,7 +53,7 @@ export const getStaticProps = async () => {
     snapshot.docs.forEach((doc) => {
       products.push({ ...doc.data(), id: doc.id });
     });
-    console.log(products);
+    // console.log(products);
     return products;
   });
 

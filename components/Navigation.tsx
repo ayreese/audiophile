@@ -9,6 +9,7 @@ import {
   faBars,
 } from "@fortawesome/free-solid-svg-icons";
 import Cart from "./Cart";
+import cart from "../public/cart.png";
 type Props = {};
 
 const Navigation = (props: Props) => {

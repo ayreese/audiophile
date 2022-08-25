@@ -4,13 +4,26 @@ import { Button } from "./Button.style";
 export const CartStyle = styled.div`
   position: absolute;
   background-color: rgba(211, 211, 211, 0.8);
-  top: 10%;
+  top: 9.2%;
   width: 100vw;
+  left: 0;
   height: 100vh;
   z-index: 1000;
+  max-width: 24000px;
   flex-direction: row-reverse;
+
   .card {
+    .loading {
+      width: 100%;
+      height: 100%;
+      z-index: 10000;
+      position: absolute;
+      object-fit: cover;
+      left: 0;
+      border: none;
+    }
     width: 20%;
+    height: auto;
     background-color: ${({ theme }) => theme.colors.senary};
     z-index: 10000;
     position: absolute;
@@ -30,6 +43,7 @@ export const CartStyle = styled.div`
       }
       .removeButton {
         align-self: center;
+        cursor: pointer;
 
         button {
           padding-block: 0.75rem;
@@ -49,10 +63,17 @@ export const CartStyle = styled.div`
       .itemImg {
         background-color: ${({ theme }) => theme.colors.tertiary};
         border-radius: 0.5rem;
+        img {
+          object-fit: contain;
+          width: 4.5rem;
+        }
+      }
+      .itemInfo {
+        text-align: left;
+        text-transform: uppercase;
       }
       h6 {
         margin: 0;
-        align-self: center;
       }
       p {
         margin: 0;

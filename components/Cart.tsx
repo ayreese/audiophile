@@ -1,61 +1,72 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button } from "../styles/Button.style";
 import { CartStyle, CheckoutButton } from "../styles/Cart.Style";
+import { Product } from "../components/interface/interfaces";
+import { useCart } from "../context/CartContext";
+import { getPrice, numberOfItems } from "./functions/cartFunctions";
 
-type Props = {};
+const Cart = () => {
+  const [value, setValue] = useState([]);
+  const [count, setCount] = useState(0);
+  const [total, setTotal] = useState(0);
+  const { decrementItem, clearCart, incrementItem } = useCart();
 
-const Cart = (props: Props) => {
-  const [count, setCount] = useState<number>(1);
-  const increment = () => {
-    setCount(count + 1);
-  };
-  const decrement = () => {
-    if (count === 1) {
-    } else {
-      setCount(count - 1);
-    }
-  };
+  useEffect(() => {
+    setValue(JSON.parse(window.localStorage.getItem("cart") || "[]"));
+    setCount(numberOfItems(value));
+    setTotal(getPrice(value));
+  }, [value]);
+
   return (
     <CartStyle>
       <div className="card">
         <div className="heading">
           <div className="cartCount">
-            <h6>Cart (0)</h6>
+            <h6>{`Cart (${count})`}</h6>
           </div>
           <div className="removeButton">
-            <button>Remove All</button>
+            <button
+              onClick={() => {
+                clearCart("value");
+              }}>
+              Remove All
+            </button>
           </div>
         </div>
-        <div className="center">
-          <div className="itemImg">
-            <img src="earphone-shop.png" alt="" />
-          </div>
-          <div className="itemInfo">
-            <h6>XX99 headphones</h6>
-            <p>$1599</p>
-          </div>
-          <div className="counter">
-            <Button onClick={decrement}>-</Button>
-            {count} <Button onClick={increment}>+</Button>
-          </div>
-        </div>
-        <div className="center">
-          <div className="itemImg">
-            <img src="earphone-shop.png" alt="" />
-          </div>
-          <div className="itemInfo">
-            <h6>XX99 headphones</h6>
-            <p>$1599</p>
-          </div>
-          <div className="counter">
-            <Button onClick={decrement}>-</Button>
-            {count} <Button onClick={increment}>+</Button>
-          </div>
-        </div>
+
+        {value.map((item: Product) => {
+          return (
+            <div key={item.id} className="center">
+              <div className="itemImg">
+                <img src={item.img} alt="" />
+              </div>
+              <div className="itemInfo">
+                <h6>{item.name}</h6>
+                <p>${item.price}</p>
+              </div>
+              <div className="counter">
+                <Button
+                  onClick={() => {
+                    decrementItem(item);
+                  }}>
+                  -
+                </Button>
+                {item.quantity}{" "}
+                <Button
+                  onClick={() => {
+                    incrementItem(item);
+                  }}>
+                  +
+                </Button>
+              </div>
+            </div>
+          );
+        })}
+
         <div className="bottom">
           <div className="total">
             <h6>Total</h6>
-            <p>$1599</p>
+            <p>${total}</p>
           </div>
           <div className="checkoutButton">
             <CheckoutButton>Checkout</CheckoutButton>

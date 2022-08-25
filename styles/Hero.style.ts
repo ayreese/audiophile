@@ -1,7 +1,7 @@
 import { type } from "os";
 import styled from "styled-components";
 
-export const Hero = styled.section`
+export const HeroStyle = styled.section`
   display: flex;
   align-items: center;
   background-color: #141414;

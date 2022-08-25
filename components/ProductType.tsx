@@ -4,9 +4,7 @@ import { Type } from "../styles/ProductTypeStyle";
 import headphonesShop from "../public/headphones-shop.png";
 import speakersShop from "../public/speaker-shop.png";
 import earphonesShop from "../public/earphone-shop.png";
-
-import { GetStaticPaths, GetStaticProps } from "next";
-import { ParsedUrlQuery } from "querystring";
+import { GetStaticProps } from "next";
 
 type Props = {};
 
@@ -73,14 +71,14 @@ const ProductType = (props: Props) => {
   );
 };
 
-export const getStaticProps: GetStaticProps = async (context) => {
-  const res = await fetch("http://localhost:1337/api/products");
-  const data = await res.json;
-  console.log(data);
+// export const getStaticProps: GetStaticProps = async (context) => {
+//   const res = await fetch("http://localhost:1337/api/products");
+//   const data = await res.json;
+//   console.log(data);
 
-  return {
-    props: { data },
-  };
-};
+//   return {
+//     props: { data },
+//   };
+// };
 
 export default ProductType;

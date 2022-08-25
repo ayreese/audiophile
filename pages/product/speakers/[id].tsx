@@ -11,17 +11,21 @@ import {
 import ProductType from "../../../components/ProductType";
 import Info from "../../../components/Info";
 import { Button } from "../../../styles/Button.style";
+import { useCart } from "../../../context/CartContext";
 
 const Details: NextPage<{ product: Product }> = ({ product }: any) => {
-  const newProduct = JSON.parse(product);
-  const [count, setCount] = useState<number>(1);
+  const { addItem } = useCart();
+  const productJsonString: string = product;
+  const item: Product = JSON.parse(productJsonString);
+  const [quantity, setQuantity] = useState<number>(1);
+  let cartItem = Object.assign(item, { quantity: quantity });
   const increment = () => {
-    setCount(count + 1);
+    setQuantity((currentQuantity) => currentQuantity + 1);
   };
   const decrement = () => {
-    if (count === 1) {
+    if (quantity === 1) {
     } else {
-      setCount(count - 1);
+      setQuantity((currentQuantity) => currentQuantity - 1);
     }
   };
   return (
@@ -29,19 +33,25 @@ const Details: NextPage<{ product: Product }> = ({ product }: any) => {
       <ProductInfoStyle>
         <div className="product-wrapper">
           <div className="left">
-            <img src={newProduct.img} alt="" />
+            <img src={item.img} alt="" />
           </div>
           <div className="right">
             <p>new product</p>
-            <h2>{newProduct.name}</h2>
-            <p>{newProduct.description}</p>
-            <p className="price">${newProduct.price}</p>
+            <h2>{item.name} speaker</h2>
+            <p>{item.description}</p>
+            <p className="price">${item.price}</p>
             <div className="buttons">
               <div className="counter">
-                <Button onClick={decrement}>-</Button>
-                {count} <Button onClick={increment}>+</Button>
+                <Button onClick={() => decrement()}>-</Button>
+                {quantity} <Button onClick={() => increment()}>+</Button>
               </div>
-              <Button primary={true}>add to cart</Button>
+              <Button
+                onClick={() => {
+                  addItem(cartItem);
+                }}
+                primary={true}>
+                add to cart
+              </Button>
             </div>
           </div>
         </div>
@@ -49,8 +59,8 @@ const Details: NextPage<{ product: Product }> = ({ product }: any) => {
       <Features>
         <div className="product-features">
           <h3>features</h3>
-          <p>{newProduct.firstFeature}</p>
-          <p>{newProduct.secondFeature}</p>
+          <p>{item.firstFeature}</p>
+          <p>{item.secondFeature}</p>
         </div>
         <div className="box-features">
           <h3>in the box</h3>
@@ -80,11 +90,11 @@ const Details: NextPage<{ product: Product }> = ({ product }: any) => {
       </Features>
       <ProductPhotos>
         <div className="left">
-          <img src={newProduct.galleryImageOne} alt="" />
-          <img src={newProduct.galleryImageTwo} alt="" />
+          <img src={item.galleryImageOne} alt="" />
+          <img src={item.galleryImageTwo} alt="" />
         </div>
         <div className="right">
-          <img src={newProduct.galleryImageThree} alt="" />
+          <img src={item.galleryImageThree} alt="" />
         </div>
       </ProductPhotos>
       <ProductType />
@@ -100,12 +110,8 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const data = await getDocs(collectRef).then((snapshot) => {
     let products: any[] = [];
     snapshot.docs.forEach((doc) => {
-      // console.log("doc data", doc);
-      // const dataObject = doc.data;
       products.push({ ...doc.data(), id: doc.id });
-      // console.log("products array", products[0]);
     });
-    console.log(products);
     return products;
   });
 
@@ -127,12 +133,11 @@ export const getStaticProps = async ({
   params: { id: string };
 }) => {
   const id = params?.id;
-  console.log(id);
-
   const docRef = doc(db, "speakers", id);
   const data = await getDoc(docRef);
+  const dataWithId = { ...data.data(), id: data.id };
 
   return {
-    props: { product: JSON.stringify(data.data()) || null },
+    props: { product: JSON.stringify(dataWithId) || null },
   };
 };

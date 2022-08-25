@@ -11,6 +11,7 @@ export const Button = styled.button<TitleProps>`
   white-space: nowrap;
   font-size: 1rem;
   text-transform: uppercase;
+  cursor: pointer;
   min-width: auto;
   border: none;
   color: ${({ theme }) => theme.colors.senary};
@@ -23,6 +24,7 @@ export const Button = styled.button<TitleProps>`
   }
   a {
     text-decoration: none;
+    cursor: pointer;
     color: ${({ theme }) => theme.colors.senary};
   }
 `;

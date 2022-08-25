@@ -1,14 +1,9 @@
 import Head from "next/head";
-import Image from "next/image";
-import Link from "next/link";
 import type { NextPage } from "next";
-import { Hero } from "../styles/Hero.style";
-import { Type } from "../styles/ProductTypeStyle";
 import Showcase from "../components/Showcase";
-import headphones from "../public/headphones-hero.png";
-import { Button } from "../styles/Button.style";
 import Info from "../components/Info";
 import ProductType from "../components/ProductType";
+import Hero from "../components/Hero";
 
 const Home: NextPage = () => {
   const newLocal = "viewport";
@@ -21,32 +16,7 @@ const Home: NextPage = () => {
         <title>audiophile</title>
       </Head>
 
-      <Hero>
-        <div className="left">
-          <p>new product</p>
-          <h1>xx99 mark ii headphones</h1>
-          <p>
-            Experience natural, lifelike audio and exceptional build quality
-            made for the passionate music enthusiast.
-          </p>
-          <button className="product-button">
-            <Link href="/product/headphones/vlxeUHDAUCjQYegc3BdD">
-              <a>See Products</a>
-            </Link>
-          </button>
-        </div>
-        <div className="right">
-          <Image
-            src={headphones}
-            alt="product-image headphones"
-            layout="responsive"
-            sizes="5vh"
-            quality={100}
-            objectFit="contain"
-            objectPosition="center"
-          />
-        </div>
-      </Hero>
+      <Hero />
       <ProductType />
       <Showcase />
       <Info />

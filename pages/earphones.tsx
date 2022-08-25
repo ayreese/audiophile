@@ -9,25 +9,23 @@ import { db } from "../clientApp";
 import { collection, doc, getDoc, getDocs } from "firebase/firestore";
 
 const Product: NextPage = ({ products }: any) => {
-  console.log(products);
   return (
     <>
       <ProductStyle>
         <div className="page-title">
-          <h1>headphones</h1>
+          <h1>earphones</h1>
         </div>
       </ProductStyle>
       <ProductDescription>
         {products.map((product: any) => {
-          console.log(product);
           return (
-            <div className="product-wrapper">
+            <div key={product.id} className="product-wrapper">
               <div className="left">
                 <img src={product.img} alt="" />
               </div>
               <div className="right">
                 <p>new product</p>
-                <h2>{product.name}</h2>
+                <h2>{product.name} wireless earphones</h2>
                 <p>{product.description}</p>
                 <Button primary={true}>
                   <Link href={`product/earphones/${product.id}`}>
@@ -54,7 +52,6 @@ export const getStaticProps = async () => {
     snapshot.docs.forEach((doc) => {
       products.push({ ...doc.data(), id: doc.id });
     });
-    console.log(products);
     return products;
   });
 
