@@ -14,6 +14,7 @@ export const Nav = styled.header`
   background-color: ${({ theme }) => theme.colors.secondary};
   padding-inline: 3rem;
   box-sizing: border-box;
+  z-index: 1000;
   h1 {
     color: ${({ theme }) => theme.colors.senary};
   }
@@ -63,6 +64,7 @@ export const Nav = styled.header`
     flex-basis: 100%;
     text-align: right;
     button {
+      cursor: pointer;
       background-color: transparent;
       border: none;
     }

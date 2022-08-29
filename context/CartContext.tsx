@@ -1,5 +1,4 @@
-import { stringLength } from "@firebase/util";
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext } from "react";
 import { useLocalStorage } from "../components/hooks/useLocalStorage";
 import {
   CartProviderProps,
@@ -12,7 +11,7 @@ const CartContext = createContext({} as ShoppingCartContext);
 export const useCart = () => useContext(CartContext);
 
 export const CartContextProvider = ({ children }: CartProviderProps) => {
-  const [value, setValue] = useLocalStorage<any[]>("cart", []);
+  const [value, setValue] = useLocalStorage<Product[]>("cart", []);
 
   const addItem = (cartItem: Product) => {
     if (value.find((item) => item.id === cartItem.id)) {
@@ -50,7 +49,7 @@ export const CartContextProvider = ({ children }: CartProviderProps) => {
   const decrementItem = (cartItem: Product) => {
     const itemToDecrement = value.find((item) => item.id === cartItem.id);
     const itemToRemove = value.findIndex((item) => item.id === cartItem.id);
-    if (itemToDecrement.quantity === 1 && value.length === 1) {
+    if (itemToDecrement?.quantity === 1 && value.length === 1) {
       setValue([]);
     }
     if (itemToDecrement && itemToDecrement.quantity === 1) {
@@ -68,27 +67,6 @@ export const CartContextProvider = ({ children }: CartProviderProps) => {
         });
       });
     }
-
-    // setValue((items) => {
-    //   return items.map((item) => {
-    //     if (item.id === cartItem.id) {
-    //       if (item.quantity === 1 && items.length === 1) {
-    //         const removeItem = items.findIndex(
-    //           (itemToRemove) => itemToRemove.id === cartItem.id,
-    //         );
-    //         console.log(removeItem);
-    //         items.splice(removeItem, 1);
-    //         return items.filter((item) => {
-    //           return item !== null;
-    //         });
-    //       } else {
-    //         return { ...item, quantity: item.quantity - 1 };
-    //       }
-    //     } else {
-    //       return { ...item };
-    //     }
-    //   });
-    // });
   };
 
   const clearCart = (prop: string) => {

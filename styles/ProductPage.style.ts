@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const ProductStyle = styled.div`
   display: flex;
   flex-direction: column;
-  background-color: #141414;
+  background-color: ${({ theme }) => theme.colors.secondary};
   width: 100%;
   box-sizing: border-box;
   padding-left: 10%;

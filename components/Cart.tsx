@@ -4,11 +4,12 @@ import { CartStyle, CheckoutButton } from "../styles/Cart.Style";
 import { Product } from "../components/interface/interfaces";
 import { useCart } from "../context/CartContext";
 import { getPrice, numberOfItems } from "./functions/cartFunctions";
+import Link from "next/link";
 
 const Cart = () => {
-  const [value, setValue] = useState([]);
-  const [count, setCount] = useState(0);
-  const [total, setTotal] = useState(0);
+  const [value, setValue] = useState<Product[]>([]);
+  const [count, setCount] = useState<number>(0);
+  const [total, setTotal] = useState<number>(0);
   const { decrementItem, clearCart, incrementItem } = useCart();
 
   useEffect(() => {
@@ -69,7 +70,11 @@ const Cart = () => {
             <p>${total}</p>
           </div>
           <div className="checkoutButton">
-            <CheckoutButton>Checkout</CheckoutButton>
+            <CheckoutButton primary={true}>
+              <Link href="/checkout">
+                <a>checkout</a>
+              </Link>
+            </CheckoutButton>
           </div>
         </div>
       </div>

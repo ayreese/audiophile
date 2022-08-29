@@ -5,31 +5,21 @@ export const CartStyle = styled.div`
   position: absolute;
   background-color: rgba(211, 211, 211, 0.8);
   top: 9.2%;
-  width: 100vw;
+  width: 100%;
   left: 0;
   height: 100vh;
-  z-index: 1000;
-  max-width: 24000px;
-  flex-direction: row-reverse;
+  z-index: 100;
+  display: flex;
+  justify-content: flex-end;
 
   .card {
-    .loading {
-      width: 100%;
-      height: 100%;
-      z-index: 10000;
-      position: absolute;
-      object-fit: cover;
-      left: 0;
-      border: none;
-    }
-    width: 20%;
     height: auto;
     background-color: ${({ theme }) => theme.colors.senary};
-    z-index: 10000;
+    z-index: 1000;
     position: absolute;
     padding-inline: 1.25rem;
-    left: 75%;
-    top: 3%;
+    right: 10rem;
+    top: 2rem;
     border-radius: 0.5rem;
     .heading {
       display: flex;
@@ -43,8 +33,7 @@ export const CartStyle = styled.div`
       }
       .removeButton {
         align-self: center;
-        cursor: pointer;
-
+        opacity: 0.7;
         button {
           padding-block: 0.75rem;
           padding-inline: 3rem;
@@ -52,6 +41,10 @@ export const CartStyle = styled.div`
           background-color: transparent;
           border: none;
           white-space: nowrap;
+          cursor: pointer;
+        }
+        button:hover {
+          color: ${({ theme }) => theme.colors.primary};
         }
       }
     }
@@ -71,6 +64,9 @@ export const CartStyle = styled.div`
       .itemInfo {
         text-align: left;
         text-transform: uppercase;
+        margin-right: auto;
+        padding-left: 1rem;
+        padding-right: 10rem;
       }
       h6 {
         margin: 0;
@@ -91,6 +87,7 @@ export const CartStyle = styled.div`
           white-space: nowrap;
         }
         button:hover {
+          color: ${({ theme }) => theme.colors.primary};
           background-color: ${({ theme }) => theme.colors.tertiary};
         }
       }
@@ -104,9 +101,29 @@ export const CartStyle = styled.div`
         align-items: center;
         h6 {
           font-size: 1.5rem;
+          opacity: 0.7;
         }
         p {
           font-size: 1.5rem;
+        }
+      }
+    }
+  }
+  @media only screen and (max-width: 768px) {
+    top: 90%;
+    .card {
+      right: 2rem;
+      top: 2rem;
+    }
+  }
+  @media only screen and (max-width: 568px) {
+    top: 90%;
+    .card {
+      top: 5rem;
+      right: 5rem;
+      .center {
+        .itemInfo {
+          padding-right: 5rem;
         }
       }
     }

@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import { ReactNode } from "react";
 
 export interface Product {
   name: string;
@@ -14,6 +14,10 @@ export interface Product {
   quantity: number;
 }
 
+export type CartProviderProps = {
+  children: ReactNode;
+};
+
 export type ShoppingCartContext = {
   addItem: (product: Product) => void;
   decrementItem: (product: Product) => void;
@@ -21,6 +25,17 @@ export type ShoppingCartContext = {
   clearCart: (prop: string) => void;
 };
 
-export type CartProviderProps = {
-  children: ReactNode;
+export type FormValues = {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: string;
+  street: string;
+  city: string;
+  state: string;
+  zip: string;
+  country: string;
+  payment: string;
+  cardNumber: string;
+  pin: string;
 };

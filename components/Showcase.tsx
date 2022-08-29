@@ -1,5 +1,4 @@
 import { ShowcaseStyle } from "../styles/ShowcaseStyle";
-import { Button } from "../styles/Button.style";
 import Link from "next/link";
 type Props = {};
 
@@ -13,19 +12,23 @@ const Showcase = (props: Props) => {
         <div className="showcase-img-tablet">
           <img src="/showcase-1-tablet.png" alt="" />
         </div>
-        <div className="description">
-          <h1>
-            ZX9 <br />
-            SPEAKER
-          </h1>
-          <p>
-            Upgrade to premium speakers that are <br />
-            phenomenally built to deliver truly remarkable <br />
-            sound.
-          </p>
-          <Link href="/product/speakers/9emGPitXUYVHTtrDoxhV">
-            <a>See Products</a>
-          </Link>
+        <div className="toCenter">
+          <div className="description">
+            <h1>
+              ZX9 <br />
+              SPEAKER
+            </h1>
+            <p>
+              Upgrade to premium speakers that are <br />
+              phenomenally built to deliver truly remarkable <br />
+              sound.
+            </p>
+            <div className="button">
+              <Link href="/product/speakers/9emGPitXUYVHTtrDoxhV">
+                <a>See Products</a>
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
       <div className="showcase-section-2">
@@ -44,7 +47,9 @@ const Showcase = (props: Props) => {
             <a>See Products</a>
           </Link>
         </div>
-        <div className="showcase-img"></div>
+        <div className="showcase-img">
+          <img src="/showcase-earphones.png" alt="" />
+        </div>
       </div>
     </ShowcaseStyle>
   );

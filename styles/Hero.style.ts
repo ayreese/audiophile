@@ -4,7 +4,8 @@ import styled from "styled-components";
 export const HeroStyle = styled.section`
   display: flex;
   align-items: center;
-  background-color: #141414;
+  background-color: ${({ theme }) => theme.colors.secondary};
+  /* background-color: #141414; */
   margin-left: auto;
   margin-right: auto;
 
