@@ -4,12 +4,12 @@ export const ProductInfoStyle = styled.div`
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-  width: 100%;
+  width: 90%;
   box-sizing: border-box;
-  padding-left: 10%;
-  padding-right: 10%;
   margin-bottom: 10rem;
   margin-top: 10rem;
+  margin-left: auto;
+  margin-right: auto;
 
   .product-wrapper {
     display: flex;
@@ -90,9 +90,32 @@ export const ProductInfoStyle = styled.div`
   @media only screen and (max-width: 780px) {
     padding-left: 1%;
     padding-right: 1%;
+    .product-wrapper {
+      .left {
+        margin-bottom: 0;
+      }
+      .right {
+        padding-left: 1rem;
+      }
+    }
 
     h1 {
       font-size: 3.5rem;
+    }
+  }
+
+  @media only screen and (max-width: 560px) {
+    .product-wrapper {
+      flex-direction: column;
+      .left {
+        margin-bottom: 3rem;
+        img {
+          object-fit: cover;
+        }
+      }
+      .right {
+        padding-left: 0;
+      }
     }
   }
 `;
@@ -103,6 +126,7 @@ export const Features = styled.div`
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 10rem;
+  width: 90%;
   max-width: 1600px;
   gap: 7.8125rem;
   .product-features {
@@ -116,6 +140,7 @@ export const Features = styled.div`
     }
     p {
       margin-bottom: 3rem;
+      white-space: pre-wrap;
     }
   }
   .box-features {
@@ -148,6 +173,16 @@ export const Features = styled.div`
 
   @media screen and (max-width: 780px) {
     flex-direction: column;
+    .product-features {
+      padding-right: 0;
+    }
+    .box-features {
+      flex-direction: row;
+      justify-content: space-between;
+      h3 {
+        margin-top: 0;
+      }
+    }
 
     .product-wrapper {
       flex-direction: column;
@@ -174,6 +209,11 @@ export const Features = styled.div`
       }
     }
   }
+  @media screen and (max-width: 560px) {
+    .box-features {
+      flex-direction: column;
+    }
+  }
 `;
 
 export const ProductPhotos = styled.div`
@@ -181,7 +221,7 @@ export const ProductPhotos = styled.div`
   box-sizing: border-box;
   max-width: 1600px;
   gap: 1rem;
-
+  width: 90%;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 5rem;

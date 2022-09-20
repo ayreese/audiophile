@@ -4,8 +4,8 @@ import { GlobalStyle } from "../styles/Global.styles";
 import { myTheme } from "../styles/theme";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
-import Navigation from "../components/Navigation";
-import Footer from "../components/Footer";
+import Navigation from "../components/pageComponents/Navigation";
+import Footer from "../components/pageComponents/Footer";
 import { AuthContextProvider } from "../context/AuthContext";
 import { CartContextProvider } from "../context/CartContext";
 

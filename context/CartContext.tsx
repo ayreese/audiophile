@@ -1,4 +1,4 @@
-import { createContext, useContext } from "react";
+import { createContext, useContext, useState } from "react";
 import { useLocalStorage } from "../components/hooks/useLocalStorage";
 import {
   CartProviderProps,
@@ -12,12 +12,16 @@ export const useCart = () => useContext(CartContext);
 
 export const CartContextProvider = ({ children }: CartProviderProps) => {
   const [value, setValue] = useLocalStorage<Product[]>("cart", []);
+  const [open, setOpen] = useState<boolean>(false);
+  const openCart = () => {
+    setOpen(!open);
+  };
 
   const addItem = (cartItem: Product) => {
     if (value.find((item) => item.id === cartItem.id)) {
       setValue((value) => {
         return value.map((item) => {
-          if (item.id === cartItem.id) {
+          if (item.id === cartItem.id && item.quantity && cartItem.quantity) {
             return { ...item, quantity: item.quantity + cartItem.quantity };
           } else {
             return { ...item };
@@ -37,7 +41,7 @@ export const CartContextProvider = ({ children }: CartProviderProps) => {
   const incrementItem = (cartItem: Product) => {
     setValue((items) => {
       return items.map((item) => {
-        if (item.id === cartItem.id) {
+        if (item.id === cartItem.id && item.quantity) {
           return { ...item, quantity: item.quantity + 1 };
         } else {
           return { ...item };
@@ -48,7 +52,7 @@ export const CartContextProvider = ({ children }: CartProviderProps) => {
 
   const decrementItem = (cartItem: Product) => {
     const itemToDecrement = value.find((item) => item.id === cartItem.id);
-    const itemToRemove = value.findIndex((item) => item.id === cartItem.id);
+    // const itemToRemove = value.findIndex((item) => item.id === cartItem.id);
     if (itemToDecrement?.quantity === 1 && value.length === 1) {
       setValue([]);
     }
@@ -59,7 +63,7 @@ export const CartContextProvider = ({ children }: CartProviderProps) => {
     } else {
       setValue((items) => {
         return items.map((item) => {
-          if (item.id === cartItem.id) {
+          if (item.id === cartItem.id && item.quantity) {
             return { ...item, quantity: item.quantity - 1 };
           } else {
             return { ...item };
@@ -75,7 +79,14 @@ export const CartContextProvider = ({ children }: CartProviderProps) => {
 
   return (
     <CartContext.Provider
-      value={{ addItem, decrementItem, clearCart, incrementItem }}>
+      value={{
+        addItem,
+        decrementItem,
+        clearCart,
+        incrementItem,
+        openCart,
+        open,
+      }}>
       {" "}
       {children}
     </CartContext.Provider>

@@ -31,8 +31,9 @@ export const FooterStyle = styled.footer`
     img {
       object-fit: contain;
       width: 150px;
-      margin-bottom: 30px;
+      margin-block: 1rem;
       grid-area: first;
+      align-self: center;
     }
   }
   ul {
@@ -68,6 +69,7 @@ export const FooterStyle = styled.footer`
   }
 
   @media only screen and (max-width: 780px) {
+    padding-inline: 2rem;
     .info {
       .description {
         p {
@@ -76,17 +78,26 @@ export const FooterStyle = styled.footer`
       }
       .logo-links {
         flex-direction: column;
+        text-align: left;
+        img {
+          align-self: flex-start;
+        }
         ul {
+          padding: 0;
           justify-content: flex-start;
           margin-bottom: 2rem;
         }
       }
     }
+    .bottom-footer {
+      .social {
+      }
+    }
   }
 
-  @media only screen and (max-width: 375px) {
-    padding-left: 1%;
-    padding-right: 1%;
+  @media only screen and (max-width: 560px) {
+    padding-left: 2%;
+    padding-right: 2%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -98,9 +109,13 @@ export const FooterStyle = styled.footer`
       }
       .logo-links {
         align-items: center;
+        img {
+          align-self: center;
+        }
         ul {
           flex-direction: column;
           align-items: center;
+          gap: 0.5rem;
         }
         li {
           margin-bottom: 0.5rem;

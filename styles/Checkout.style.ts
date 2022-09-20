@@ -22,9 +22,7 @@ export const CheckoutStyle = styled.div`
       padding: 20px 10px;
       flex: 1 1 100%;
     }
-    input:focus {
-      border-color: ${({ theme }) => theme.colors.primary};
-    }
+
     label {
       width: 100%;
       display: block;

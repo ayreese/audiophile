@@ -23,6 +23,9 @@ export const HeroStyle = styled.section`
       color: ${({ theme }) => theme.colors.senary};
       margin: 0;
     }
+    p:first-child {
+      letter-spacing: 10px;
+    }
     h1 {
       font-size: 3.5rem; //56px
       line-height: 3.625rem;
@@ -48,35 +51,17 @@ export const HeroStyle = styled.section`
         text-decoration: none;
         color: white;
       }
-      a:link {
-        text-decoration: none;
-      }
-
-      a:visited {
-        text-decoration: none;
-      }
-
-      a:hover {
-        text-decoration: none;
-      }
-
-      a:active {
-        text-decoration: none;
-      }
-    }
-    .product-button:hover {
-      background-color: ${({ theme }) => theme.colors.quinary};
-      cursor: pointer;
     }
   }
 
   .right {
     flex: 100%;
     min-width: 0;
-    /* margin: auto; */
     img {
-      object-fit: contain;
+      object-fit: cover;
       max-width: 100%;
+      width: 100%;
+      height: 100%;
     }
   }
 
@@ -98,9 +83,13 @@ export const HeroStyle = styled.section`
     }
   }
 
-  @media only screen and (max-width: 375px) {
+  @media only screen and (max-width: 475px) {
     .left {
       padding-top: 10rem;
+      h1 {
+        font-size: 2.25rem;
+        line-height: normal;
+      }
     }
   }
 `;

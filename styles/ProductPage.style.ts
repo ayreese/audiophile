@@ -27,6 +27,7 @@ export const ProductStyle = styled.div`
 export const ProductDescription = styled.div`
   margin-left: auto;
   margin-right: auto;
+  width: 90%;
   div:nth-child(even) {
     flex-direction: row-reverse;
     .right {
@@ -50,10 +51,6 @@ export const ProductDescription = styled.div`
 
     .left {
       flex: 1 1 100%;
-      padding: 3rem;
-      background-color: ${({ theme }) => theme.colors.tertiary};
-      text-align: center;
-      margin-bottom: 2rem;
       img {
         object-fit: contain;
         max-width: 100%;
@@ -116,6 +113,9 @@ export const ProductDescription = styled.div`
         padding-left: 1%;
         padding-right: 1%;
         text-align: center;
+      }
+      .left {
+        margin-bottom: 3rem;
       }
     }
   }

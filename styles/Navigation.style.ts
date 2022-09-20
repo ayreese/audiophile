@@ -1,4 +1,3 @@
-import { type } from "os";
 import styled from "styled-components";
 
 type Props = {
@@ -14,7 +13,8 @@ export const Nav = styled.header`
   background-color: ${({ theme }) => theme.colors.secondary};
   padding-inline: 3rem;
   box-sizing: border-box;
-  z-index: 1000;
+  z-index: 100;
+  position: relative;
   h1 {
     color: ${({ theme }) => theme.colors.senary};
   }
@@ -49,12 +49,12 @@ export const Nav = styled.header`
           color: ${({ theme }) => theme.colors.senary};
         }
 
-        a:hover {
+        /* a:hover {
           color: ${({ theme }) => theme.colors.primary};
-        }
-        a:visited {
+        } */
+        /* a:visited {
           color: #fff;
-        }
+        } */
       }
     }
   }
@@ -74,14 +74,14 @@ export const Nav = styled.header`
     }
   }
 
-  @media only screen and (max-width: 780px) {
+  @media only screen and (max-width: 768px) {
     padding-inline: 2.5rem;
-    z-index: 1000;
+    z-index: 100;
     position: relative;
 
     .menu-buttons {
       flex-basis: 100%;
-      z-index: 100;
+      z-index: 10;
     }
     .menu {
       display: block;
