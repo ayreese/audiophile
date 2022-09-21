@@ -218,7 +218,7 @@ const Checkout: NextPage = () => {
               </div>
               <div className="total">
                 <p>Grand Total</p>
-                <p>${value ? grandTotal : "0"}</p>
+                <p>{value ? grandTotal : "0"}</p>
               </div>
               <div className="checkoutButton">
                 <input type="submit" value="Submit" />

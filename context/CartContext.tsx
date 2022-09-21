@@ -52,7 +52,6 @@ export const CartContextProvider = ({ children }: CartProviderProps) => {
 
   const decrementItem = (cartItem: Product) => {
     const itemToDecrement = value.find((item) => item.id === cartItem.id);
-    // const itemToRemove = value.findIndex((item) => item.id === cartItem.id);
     if (itemToDecrement?.quantity === 1 && value.length === 1) {
       setValue([]);
     }
