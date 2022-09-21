@@ -48,7 +48,7 @@ export const RecommendationStyle = styled.div`
     }
   }
 
-  @media only screen and (max-width: 560px) {
+  @media only screen and (max-width: 568px) {
     h3 {
       font-size: 1.5rem;
     }

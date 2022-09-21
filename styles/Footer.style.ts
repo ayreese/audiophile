@@ -68,7 +68,7 @@ export const FooterStyle = styled.footer`
     }
   }
 
-  @media only screen and (max-width: 780px) {
+  @media only screen and (max-width: 768px) {
     padding-inline: 2rem;
     .info {
       .description {
@@ -95,7 +95,7 @@ export const FooterStyle = styled.footer`
     }
   }
 
-  @media only screen and (max-width: 560px) {
+  @media only screen and (max-width: 568px) {
     padding-left: 2%;
     padding-right: 2%;
     display: flex;

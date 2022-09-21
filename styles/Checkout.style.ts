@@ -272,7 +272,7 @@ export const CheckoutStyle = styled.div`
   .card {
     padding-inline: 2rem;
   }
-  @media only screen and (max-width: 560px) {
+  @media only screen and (max-width: 568px) {
     form {
       .formSection {
         .inputFields {

@@ -88,7 +88,7 @@ export const ProductInfoStyle = styled.div`
     }
   }
 
-  @media only screen and (max-width: 780px) {
+  @media only screen and (max-width: 768px) {
     padding-left: 1%;
     padding-right: 1%;
     .product-wrapper {
@@ -105,7 +105,7 @@ export const ProductInfoStyle = styled.div`
     }
   }
 
-  @media only screen and (max-width: 560px) {
+  @media only screen and (max-width: 568px) {
     .product-wrapper {
       flex-direction: column;
       .left {

@@ -65,7 +65,7 @@ export const HeroStyle = styled.section`
     }
   }
 
-  @media only screen and (max-width: 780px) {
+  @media only screen and (max-width: 768px) {
     h1 {
       font-size: 3.5rem;
     }
@@ -83,7 +83,7 @@ export const HeroStyle = styled.section`
     }
   }
 
-  @media only screen and (max-width: 475px) {
+  @media only screen and (max-width: 568px) {
     .left {
       padding-top: 10rem;
       h1 {

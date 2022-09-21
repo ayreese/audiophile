@@ -34,7 +34,7 @@ export const InfoStyle = styled.div`
     }
   }
 
-  @media only screen and (max-width: 780px) {
+  @media only screen and (max-width: 768px) {
     flex-direction: column-reverse;
     .left {
       text-align: center;

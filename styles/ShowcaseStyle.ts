@@ -154,7 +154,7 @@ export const ShowcaseStyle = styled.section`
     flex: 1;
   }
 
-  @media only screen and (max-width: 780px) {
+  @media only screen and (max-width: 768px) {
     .showcase-section-1 {
       flex-direction: column;
       background-image: url("/showcase-1-background.png");
@@ -195,7 +195,7 @@ export const ShowcaseStyle = styled.section`
     }
   }
 
-  @media only screen and (max-width: 560px) {
+  @media only screen and (max-width: 568px) {
     .showcase-section-1 {
     }
     .showcase-section-3 {

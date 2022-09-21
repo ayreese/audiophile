@@ -1,9 +1,7 @@
 import styled from "styled-components";
 
 export const ProductStyle = styled.div`
-  title {
-    text-transform: uppercase;
-  }
+  scrollbar-width: none; /* Firefox */
   display: flex;
   flex-direction: column;
   background-color: ${({ theme }) => theme.colors.secondary};
@@ -23,6 +21,13 @@ export const ProductStyle = styled.div`
     h1 {
       margin: 0;
       padding-top: 8rem;
+    }
+  }
+  @media only screen and (max-width: 568px) {
+    .page-title {
+      h1 {
+        font-size: 2rem;
+      }
     }
   }
 `;
@@ -93,7 +98,7 @@ export const ProductDescription = styled.div`
     }
   }
 
-  @media only screen and (max-width: 780px) {
+  @media only screen and (max-width: 768px) {
     padding-left: 1%;
     padding-right: 1%;
 
@@ -123,7 +128,7 @@ export const ProductDescription = styled.div`
     }
   }
 
-  @media only screen and (max-width: 375px) {
+  @media only screen and (max-width: 568px) {
     .hero {
       padding-left: 1%;
       padding-right: 1%;

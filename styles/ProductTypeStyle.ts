@@ -66,7 +66,7 @@ export const Type = styled.section`
     }
   }
 
-  @media only screen and (max-width: 780px) {
+  @media only screen and (max-width: 768px) {
     .main {
       flex-wrap: wrap;
       justify-content: space-around;
