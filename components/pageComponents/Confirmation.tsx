@@ -76,7 +76,7 @@ const Confirmation = ({ items }: Products) => {
           </div>
           <div className="right">
             <p>Grand total</p>
-            <p>${grandTotal}</p>
+            <p>{grandTotal}</p>
           </div>
         </div>
         <button

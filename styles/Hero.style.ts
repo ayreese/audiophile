@@ -5,7 +5,6 @@ export const HeroStyle = styled.section`
   display: flex;
   align-items: center;
   background-color: ${({ theme }) => theme.colors.secondary};
-  /* background-color: #141414; */
   margin-left: auto;
   margin-right: auto;
 
@@ -58,7 +57,7 @@ export const HeroStyle = styled.section`
     flex: 100%;
     min-width: 0;
     img {
-      object-fit: cover;
+      object-fit: contain;
       max-width: 100%;
       width: 100%;
       height: 100%;
