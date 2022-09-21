@@ -13,7 +13,6 @@ import ProductType from "../../components/pageComponents/ProductType";
 import Recommendations from "../../components/pageComponents/Recommendations";
 import data from "../../data.json";
 import Head from "next/head";
-import Image from "next/image";
 
 const Details: NextPage<{ product: string }> = ({ product }) => {
   const newLocal = "viewport";
@@ -40,14 +39,7 @@ const Details: NextPage<{ product: string }> = ({ product }) => {
       <ProductInfoStyle>
         <div className="product-wrapper">
           <div className="left">
-            <Image
-              src={item.categoryImage.desktop}
-              objectFit="contain"
-              layout="responsive"
-              width="100"
-              height="100"
-              alt=""
-            />
+            <img src={item.categoryImage.desktop} alt="" />
           </div>
           <div className="right">
             {item.new && <p>new product</p>}
