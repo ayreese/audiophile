@@ -10,11 +10,13 @@ export const ProductInfoStyle = styled.div`
   margin-top: 10rem;
   margin-left: auto;
   margin-right: auto;
+  gap: 7.8125rem;
 
   .product-wrapper {
     display: flex;
     flex-direction: row;
     max-width: 1600px;
+    justify-content: space-between;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 3rem;
@@ -22,8 +24,7 @@ export const ProductInfoStyle = styled.div`
     align-items: center;
     .left {
       flex: 1 1 100%;
-      padding: 3rem;
-      background-color: ${({ theme }) => theme.colors.tertiary};
+      /* padding: 3rem; */
       text-align: center;
       margin-bottom: 2rem;
       img {

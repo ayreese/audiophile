@@ -12,8 +12,11 @@ import { useCart } from "../../context/CartContext";
 import ProductType from "../../components/pageComponents/ProductType";
 import Recommendations from "../../components/pageComponents/Recommendations";
 import data from "../../data.json";
+import Head from "next/head";
+import Image from "next/image";
 
 const Details: NextPage<{ product: string }> = ({ product }) => {
+  const newLocal = "viewport";
   const { addItem } = useCart();
   const item: Product = JSON.parse(product);
   const [quantity, setQuantity] = useState<number>(1);
@@ -30,10 +33,21 @@ const Details: NextPage<{ product: string }> = ({ product }) => {
 
   return (
     <>
+      <Head>
+        <meta name={newLocal} content="width=device-width, initial-scale=1.0" />
+        <title>{item.name}</title>
+      </Head>
       <ProductInfoStyle>
         <div className="product-wrapper">
           <div className="left">
-            <img src={item.categoryImage.desktop} alt="" />
+            <Image
+              src={item.categoryImage.desktop}
+              objectFit="contain"
+              layout="responsive"
+              width="100"
+              height="100"
+              alt=""
+            />
           </div>
           <div className="right">
             {item.new && <p>new product</p>}
@@ -66,7 +80,7 @@ const Details: NextPage<{ product: string }> = ({ product }) => {
           <div className="box-content">
             {item.includes.map((items) => {
               return (
-                <div className="content">
+                <div key={item.id} className="content">
                   <p className="count">{items.quantity}x</p>
                   <p className="item">{items.item}</p>
                 </div>

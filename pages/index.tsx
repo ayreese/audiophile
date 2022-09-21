@@ -10,9 +10,8 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name={newLocal} content="width=device-width, initial-scale=1.0" />
-        <title>audiophile</title>
+        <title>Audiophile</title>
       </Head>
 
       <Hero />

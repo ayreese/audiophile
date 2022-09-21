@@ -8,8 +8,11 @@ import {
   productName,
 } from "../components/functions/cartFunctions";
 import Confirmation from "../components/pageComponents/Confirmation";
+import { NextPage } from "next";
+import Head from "next/head";
 
-const checkout = () => {
+const Checkout: NextPage = () => {
+  const newLocal = "viewport";
   const [value, setValue] = useState<Product[]>([]);
   const [cod, setCod] = useState(false);
   const {
@@ -29,6 +32,10 @@ const checkout = () => {
 
   return (
     <>
+      <Head>
+        <meta name={newLocal} content="width=device-width, initial-scale=1.0" />
+        <title>Checkout</title>
+      </Head>
       {isSubmitSuccessful && <Confirmation items={value} />}
       <CheckoutStyle>
         <form action="" onSubmit={handleSubmit(onSubmit)}>
@@ -224,4 +231,4 @@ const checkout = () => {
   );
 };
 
-export default checkout;
+export default Checkout;

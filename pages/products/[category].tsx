@@ -9,12 +9,19 @@ import Link from "next/link";
 import Info from "../../components/pageComponents/Info";
 import ProductType from "../../components/pageComponents/ProductType";
 import data from "../../data.json";
+import Head from "next/head";
 
 const Details: NextPage<{ product: string }> = ({ product }) => {
+  const newLocal = "viewport";
   const elements = JSON.parse(product);
   const products = elements.items;
+
   return (
     <>
+      <Head>
+        <meta name={newLocal} content="width=device-width, initial-scale=1.0" />
+        <title>{elements.pageName.toUpperCase()}</title>
+      </Head>
       <ProductStyle>
         <div className="page-title">
           <h1>{elements.pageName}</h1>
