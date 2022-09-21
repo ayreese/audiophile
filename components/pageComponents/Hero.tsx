@@ -32,15 +32,7 @@ const Hero = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.1, duration: 1 }}>
-        <Image
-          src={headphones}
-          alt="product-image headphones"
-          layout="responsive"
-          sizes="5vh"
-          quality={100}
-          objectFit="contain"
-          objectPosition="center"
-        />
+        <img src="/headphones-hero.png" alt="product-image headphones" />
       </motion.div>
     </HeroStyle>
   );
