@@ -15,7 +15,7 @@ const Cart = () => {
   const [value, setValue] = useState<Product[]>([]);
   const [count, setCount] = useState<number>(0);
   const [total, setTotal] = useState<string>();
-  const { decrementItem, clearCart, incrementItem, openCart, open } = useCart();
+  const { decrementItem, clearCart, incrementItem, openCart } = useCart();
 
   useEffect(() => {
     setValue(() => JSON.parse(window.localStorage.getItem("cart") || "[]"));
@@ -87,11 +87,17 @@ const Cart = () => {
               <p>${total}</p>
             </div>
             <div className="checkoutButton">
-              <Link href="/checkout">
-                <CheckoutButton primary={true} onClick={openCart}>
+              {value.length > 0 ? (
+                <Link href="/checkout">
+                  <CheckoutButton primary={true} onClick={openCart}>
+                    <a>checkout</a>
+                  </CheckoutButton>
+                </Link>
+              ) : (
+                <CheckoutButton primary={false}>
                   <a>checkout</a>
                 </CheckoutButton>
-              </Link>
+              )}
             </div>
           </div>
         </motion.div>

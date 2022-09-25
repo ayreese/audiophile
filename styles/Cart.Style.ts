@@ -128,7 +128,17 @@ export const CartStyle = styled.div`
       }
     }
   }
-  @media only screen and (max-width: 568px) {
+  @media only screen and (max-width: 428px) {
+    .main {
+      .card {
+        right: 0.5rem;
+        .center {
+          .itemInfo {
+            padding-right: 2rem;
+          }
+        }
+      }
+    }
   }
 `;
 

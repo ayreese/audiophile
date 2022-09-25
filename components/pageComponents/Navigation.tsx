@@ -12,9 +12,11 @@ import logo from "../../public/audiophile 2.png";
 const Navigation = () => {
   const { openCart, open } = useCart();
   const [active, setActive] = useState(false);
+
   const menuToggle = () => {
-    setActive(!active);
+    if (!open) setActive(!active);
   };
+  const handleClose = () => setActive(false);
 
   return (
     <Nav>
@@ -38,7 +40,8 @@ const Navigation = () => {
           <li>
             <Link href="/">
               <motion.a
-                whileHover={{ color: "#d87d4a", cursor: "pointer", scale: 4 }}>
+                whileHover={{ color: "#d87d4a", cursor: "pointer", scale: 4 }}
+                onClick={handleClose}>
                 {" "}
                 home
               </motion.a>
@@ -46,7 +49,9 @@ const Navigation = () => {
           </li>
           <li>
             <Link href="/products/headphones">
-              <motion.a whileHover={{ color: "#d87d4a", cursor: "pointer" }}>
+              <motion.a
+                whileHover={{ color: "#d87d4a", cursor: "pointer" }}
+                onClick={handleClose}>
                 {" "}
                 headphones
               </motion.a>
@@ -54,7 +59,9 @@ const Navigation = () => {
           </li>
           <li>
             <Link href="/products/speakers">
-              <motion.a whileHover={{ color: "#d87d4a", cursor: "pointer" }}>
+              <motion.a
+                whileHover={{ color: "#d87d4a", cursor: "pointer" }}
+                onClick={handleClose}>
                 {" "}
                 speakers
               </motion.a>
@@ -62,7 +69,9 @@ const Navigation = () => {
           </li>
           <li>
             <Link href="/products/earphones">
-              <motion.a whileHover={{ color: "#d87d4a", cursor: "pointer" }}>
+              <motion.a
+                whileHover={{ color: "#d87d4a", cursor: "pointer" }}
+                onClick={handleClose}>
                 {" "}
                 earphones
               </motion.a>
