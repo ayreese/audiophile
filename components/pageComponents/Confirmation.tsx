@@ -49,7 +49,7 @@ const Confirmation = ({ items }: Products) => {
                     <img src={items[0].image.desktop} alt="" />
                   </div>
                   <div className="center">
-                    <h5> {items[0].others[0].name}</h5>
+                    <h5> {productName(items[0].name)}</h5>
                     <p>${items[0].price}</p>
                   </div>
                   <div className="quantityInfo">

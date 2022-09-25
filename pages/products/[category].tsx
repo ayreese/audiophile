@@ -29,7 +29,6 @@ const Details: NextPage<{ product: string }> = ({ product }) => {
       </ProductStyle>
       <ProductDescription>
         {products.map((product: any) => {
-          console.log(product);
           return (
             <div key={product.id} className="product-wrapper">
               <div className="left">

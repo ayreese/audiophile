@@ -12,12 +12,14 @@ export const CartStyle = styled.div`
     z-index: 100;
     display: flex;
     justify-content: flex-end;
+    overflow-y: hidden;
 
     .card {
       height: auto;
       background-color: ${({ theme }) => theme.colors.senary};
       z-index: 1000;
       position: absolute;
+      box-sizing: border-box;
       padding-inline: 1.25rem;
       right: 10rem;
       top: 2rem;
@@ -82,7 +84,6 @@ export const CartStyle = styled.div`
           background-color: ${({ theme }) => theme.colors.tertiary};
           text-align: center;
           white-space: nowrap;
-          /* align-self: flex-start; */
 
           button {
             color: ${({ theme }) => theme.colors.septenary};

@@ -18,18 +18,18 @@ export const CartContextProvider = ({ children }: CartProviderProps) => {
   };
 
   const addItem = (cartItem: Product) => {
+    console.log(cartItem);
     if (value.find((item) => item.id === cartItem.id)) {
       setValue((value) => {
         return value.map((item) => {
-          if (item.id === cartItem.id && item.quantity && cartItem.quantity) {
-            return { ...item, quantity: item.quantity + cartItem.quantity };
+          console.log("CI", cartItem.quantity, "IQ", item.quantity);
+          if (item.id === cartItem.id) {
+            return { ...item, quantity: item.quantity! + cartItem.quantity! };
           } else {
             return { ...item };
           }
         });
-        0;
       });
-      setValue(value);
     } else {
       setValue((value) => {
         console.log([...value, cartItem]);

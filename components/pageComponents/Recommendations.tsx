@@ -7,13 +7,10 @@ import { Product } from "../interface/interfaces";
 import data from "../../data.json";
 
 const Recommendations = (prop: Product) => {
-  console.log("ITEM ON REC PAGE", prop);
   const [recommendations, setRecommendations] = useState<Product[]>();
 
   useEffect(() => {
     setRecommendations(suggestions(prop, data));
-
-    return () => {};
   }, []);
 
   return (

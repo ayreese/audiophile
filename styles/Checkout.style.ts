@@ -181,6 +181,7 @@ export const CheckoutStyle = styled.div`
             border-radius: 0;
             color: ${({ theme }) => theme.colors.tertiary};
             background-color: ${({ theme }) => theme.colors.primary};
+            border: none;
           }
         }
       }

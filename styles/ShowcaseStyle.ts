@@ -215,4 +215,30 @@ export const ShowcaseStyle = styled.section`
       }
     }
   }
+
+  @media only screen and (max-width: 475px) {
+    .showcase-section-1 {
+    }
+    .showcase-section-2 {
+      .description {
+        padding: 3rem 2rem;
+      }
+    }
+    .showcase-section-3 {
+      flex-direction: column-reverse;
+      .description {
+        padding: 3rem 2rem;
+      }
+      .showcase-img {
+        background-image: none;
+        img {
+          display: block;
+          flex: 1 1 100%;
+          min-width: 0;
+          object-fit: contain;
+          border-radius: 8px;
+        }
+      }
+    }
+  }
 `;

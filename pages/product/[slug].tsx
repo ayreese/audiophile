@@ -54,6 +54,7 @@ const Details: NextPage<{ product: string }> = ({ product }) => {
               <Button
                 onClick={() => {
                   addItem(cartItem);
+                  setQuantity(1);
                 }}
                 primary={true}>
                 add to cart
@@ -70,9 +71,9 @@ const Details: NextPage<{ product: string }> = ({ product }) => {
         <div className="box-features">
           <h3>in the box</h3>
           <div className="box-content">
-            {item.includes.map((items) => {
+            {item.includes.map((items, index) => {
               return (
-                <div key={item.id} className="content">
+                <div key={index} className="content">
                   <p className="count">{items.quantity}x</p>
                   <p className="item">{items.item}</p>
                 </div>

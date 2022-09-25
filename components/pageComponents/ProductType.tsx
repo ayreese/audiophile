@@ -31,7 +31,7 @@ const ProductType = ({ prop }: Prop) => {
               <div className="description-bg"></div>
               <div className="product-description">
                 <p>Headphones</p>
-                <Link href="/headphones">
+                <Link href="/products/headphones">
                   <a>
                     shop <span>{">"}</span>
                   </a>

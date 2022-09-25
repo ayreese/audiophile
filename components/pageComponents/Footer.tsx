@@ -27,7 +27,7 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link href="/headphones">
+                <Link href="/products/headphones">
                   <motion.a
                     whileHover={{ color: "#d87d4a", cursor: "pointer" }}>
                     {" "}
@@ -36,7 +36,7 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link href="/speakers">
+                <Link href="/products/speakers">
                   <motion.a
                     whileHover={{ color: "#d87d4a", cursor: "pointer" }}>
                     {" "}
@@ -45,7 +45,7 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link href="/earphones">
+                <Link href="/products/earphones">
                   <motion.a
                     whileHover={{ color: "#d87d4a", cursor: "pointer" }}>
                     {" "}
