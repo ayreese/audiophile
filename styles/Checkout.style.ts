@@ -1,9 +1,7 @@
 import styled from "styled-components";
 
 export const CheckoutStyle = styled.div`
-  /* margin: 5rem; */
   background-color: #f2f2f2;
-
   form {
     display: flex;
     justify-content: space-between;
@@ -15,8 +13,6 @@ export const CheckoutStyle = styled.div`
     box-sizing: border-box;
     input {
       display: block;
-      -webkit-appearance: none;
-      -moz-appearance: none;
       border-width: 1px;
       border-radius: 8px;
       padding: 20px 10px;
@@ -109,7 +105,6 @@ export const CheckoutStyle = styled.div`
     }
     input[type="radio"] {
       height: 16px !important;
-      -moz-appearance: radio !important;
     }
     .card {
       display: inline-block;
@@ -147,12 +142,16 @@ export const CheckoutStyle = styled.div`
           margin-right: auto;
           padding-left: 1rem;
           text-transform: uppercase;
+          font-weight: 700;
+          font-size: 15px;
+          line-height: 25px;
         }
-        h6 {
-          margin: 0;
-        }
+
         p {
           margin: 0;
+          font-weight: 700;
+          font-size: 15px;
+          line-height: 25px;
         }
         .counter {
           font-size: 1rem;

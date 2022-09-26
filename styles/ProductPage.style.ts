@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const ProductStyle = styled.div`
-  scrollbar-width: none; /* Firefox */
   display: flex;
   flex-direction: column;
   background-color: ${({ theme }) => theme.colors.secondary};
@@ -23,19 +22,10 @@ export const ProductStyle = styled.div`
       padding-top: 8rem;
     }
   }
-  @media only screen and (max-width: 568px) {
-    .page-title {
-      h1 {
-        font-size: 2rem;
-      }
-    }
-  }
 `;
 
 export const ProductDescription = styled.div`
-  margin-left: auto;
-  margin-right: auto;
-  width: 90%;
+  margin-inline: 10.3rem;
   div:nth-child(even) {
     flex-direction: row-reverse;
     .right {
@@ -86,8 +76,6 @@ export const ProductDescription = styled.div`
         gap: 5%;
         width: 75%;
         margin: 0;
-
-        //   flex-direction: row-reverse;
         .counter {
           color: ${({ theme }) => theme.colors.septenary};
           background-color: ${({ theme }) => theme.colors.tertiary};
@@ -98,9 +86,8 @@ export const ProductDescription = styled.div`
     }
   }
 
-  @media only screen and (max-width: 768px) {
-    padding-left: 1%;
-    padding-right: 1%;
+  @media only screen and (max-width: 810px) {
+    margin-inline: 2.5rem;
 
     h1 {
       font-size: 3.5rem;
@@ -128,15 +115,7 @@ export const ProductDescription = styled.div`
     }
   }
 
-  @media only screen and (max-width: 568px) {
-    .hero {
-      padding-left: 1%;
-      padding-right: 1%;
-      .wrapper {
-        .left {
-          padding-top: 10rem;
-        }
-      }
-    }
+  @media only screen and (max-width: 428px) {
+    margin-inline: 1.5rem;
   }
 `;

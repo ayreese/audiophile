@@ -4,13 +4,15 @@ export const RecommendationStyle = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 90%;
-  margin-inline: auto;
+  margin-inline: 10.3rem;
   max-width: 1600px;
   h3 {
     text-transform: uppercase;
-    font-size: 3.25rem;
-    margin-bottom: 4rem;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 36px;
+    letter-spacing: 1.14286px;
+    text-transform: uppercase;
   }
   .boxes {
     display: flex;
@@ -27,6 +29,12 @@ export const RecommendationStyle = styled.div`
         }
       }
       h4 {
+        margin-block: 1.5rem;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 33px;
+        text-align: center;
+        letter-spacing: 1.71429px;
         text-transform: uppercase;
       }
       button {
@@ -48,7 +56,13 @@ export const RecommendationStyle = styled.div`
     }
   }
 
-  @media only screen and (max-width: 568px) {
+  @media only screen and (max-width: 810px) {
+    margin-inline: 2.5rem;
+  }
+
+  @media only screen and (max-width: 428px) {
+    margin-inline: 1.5rem;
+
     h3 {
       font-size: 1.5rem;
     }

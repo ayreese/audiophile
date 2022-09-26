@@ -5,14 +5,9 @@ export const Type = styled.section`
     display: flex;
     justify-content: space-between;
     box-sizing: border-box;
-    width: 90%;
-    max-width: 1600px;
-    margin: auto;
-    margin-top: 10.625rem;
-    margin-bottom: 10.625rem;
+    margin-block: 10.625rem 10.625rem;
+    margin-inline: 10.3rem;
     gap: 1rem;
-    box-sizing: border-box;
-    max-width: 1600px;
 
     .product-type {
       display: flex;
@@ -37,6 +32,7 @@ export const Type = styled.section`
         text-transform: uppercase;
         font-weight: bold;
         font-size: 1.125rem;
+        margin-block: 2rem 0.9rem;
       }
       a {
         padding-bottom: 1.25rem;
@@ -44,6 +40,7 @@ export const Type = styled.section`
         text-decoration: none;
         font-size: 0.8125rem;
         color: ${({ theme }) => theme.colors.septenary};
+        opacity: 0.5;
 
         span {
           color: ${({ theme }) => theme.colors.primary};
@@ -66,10 +63,11 @@ export const Type = styled.section`
     }
   }
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 810px) {
     .main {
       flex-wrap: wrap;
       justify-content: space-around;
+      margin-inline: 2.5rem;
     }
     .product-type {
       margin-bottom: 1.875rem;
@@ -82,6 +80,11 @@ export const Type = styled.section`
       .headphones {
         content: url("headphones-tablet.png");
       }
+    }
+  }
+  @media only screen and (max-width: 428px) {
+    .main {
+      margin-inline: 1.5rem;
     }
   }
 `;

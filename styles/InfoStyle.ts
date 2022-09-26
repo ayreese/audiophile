@@ -2,9 +2,7 @@ import styled from "styled-components";
 
 export const InfoStyle = styled.div`
   display: flex;
-  width: 90%;
-  max-width: 1600px;
-  margin: auto;
+  margin-inline: 10.3rem;
   padding: 9.125rem 0;
   position: relative;
   align-items: center;
@@ -15,9 +13,6 @@ export const InfoStyle = styled.div`
     text-transform: uppercase;
     flex: 1 1 100%;
     overflow: hidden;
-  }
-  h2 {
-    margin-bottom: 2rem;
   }
 
   span {
@@ -34,11 +29,15 @@ export const InfoStyle = styled.div`
     }
   }
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 810px) {
+    margin-inline: 2.5rem;
     flex-direction: column-reverse;
     .left {
       text-align: center;
       padding-right: 0;
     }
+  }
+  @media only screen and (max-width: 428px) {
+    margin-inline: 1.5rem;
   }
 `;

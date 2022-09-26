@@ -23,14 +23,13 @@ const Showcase = ({ prop }: Prop) => {
             </div>
             <div className="toCenter">
               <div className="description">
-                <h1>
+                <h1 className="homeProductTitle">
                   ZX9 <br />
                   SPEAKER
                 </h1>
                 <p>
-                  Upgrade to premium speakers that are <br />
-                  phenomenally built to deliver truly remarkable <br />
-                  sound.
+                  Upgrade to premium speakers that are phenomenally built to
+                  deliver truly remarkable sound.
                 </p>
                 <div className="button">
                   <Link href="/product/zx9-speaker">

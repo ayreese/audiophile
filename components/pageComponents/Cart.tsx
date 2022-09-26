@@ -40,7 +40,7 @@ const Cart = () => {
           viewport={{ once: true }}>
           <div className="heading">
             <div className="cartCount">
-              <h6>{`Cart (${count})`}</h6>
+              <p>{`Cart (${count})`}</p>
             </div>
             <div className="removeButton">
               <button
@@ -59,7 +59,7 @@ const Cart = () => {
                   <img src={item.categoryImage.mobile} alt="" />
                 </div>
                 <div className="itemInfo">
-                  <h6>{productName(item.name)}</h6>
+                  <p>{productName(item.name)}</p>
                   <p>${item.price}</p>
                 </div>
                 <div className="counter">
@@ -83,7 +83,7 @@ const Cart = () => {
 
           <div className="bottom">
             <div className="total">
-              <h6>Total</h6>
+              <p>Total</p>
               <p>${total}</p>
             </div>
             <div className="checkoutButton">

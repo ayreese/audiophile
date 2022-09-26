@@ -1,4 +1,5 @@
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
+import Image from "next/image";
 import React, { useState } from "react";
 import { Product } from "../../components/interface/interfaces";
 import {
@@ -39,11 +40,16 @@ const Details: NextPage<{ product: string }> = ({ product }) => {
       <ProductInfoStyle>
         <div className="product-wrapper">
           <div className="left">
-            <img src={item.categoryImage.desktop} alt="" />
+            <Image
+              src={item.categoryImage.desktop}
+              alt="product image"
+              width="700"
+              height="700"
+            />
           </div>
           <div className="right">
-            {item.new && <p>new product</p>}
-            <h2>{item.name}</h2>
+            {item.new && <p className="newProductTitle">new product</p>}
+            <h2 className="sectionTitle">{item.name}</h2>
             <p>{item.description}</p>
             <p className="price">${item.price}</p>
             <div className="buttons">
@@ -84,11 +90,11 @@ const Details: NextPage<{ product: string }> = ({ product }) => {
       </Features>
       <ProductPhotos>
         <div className="left">
-          <img src={item.gallery.first.desktop} alt="" />
-          <img src={item.gallery.second.desktop} alt="" />
+          <img src={item.gallery.first.desktop} alt="gallery image" />
+          <img src={item.gallery.second.desktop} alt="gallery image" />
         </div>
         <div className="right">
-          <img src={item.gallery.third.desktop} alt="" />
+          <img src={item.gallery.third.desktop} alt="gallery image" />
         </div>
       </ProductPhotos>
       <Recommendations {...item} />

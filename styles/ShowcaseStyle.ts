@@ -1,13 +1,10 @@
 import styled from "styled-components";
 
 export const ShowcaseStyle = styled.section`
-  width: 90%;
-  max-width: 1600px;
-  margin: auto;
+  margin-inline: 10.3rem;
   .showcase-section-1 {
     display: flex;
     padding-top: 3.125rem;
-    box-sizing: border-box;
     justify-content: space-around;
     background-color: ${({ theme }) => theme.colors.primary};
     background-image: url("/showcase-circles.png");
@@ -49,19 +46,18 @@ export const ShowcaseStyle = styled.section`
       .description {
         color: ${({ theme }) => theme.colors.quaternary};
         height: auto;
-        h1 {
-          margin-bottom: 0.5rem;
-          margin-top: 0;
-        }
-        p {
-          margin-bottom: 1.5rem;
-          margin-top: 0;
-        }
         .button {
           margin-bottom: 3rem;
         }
       }
     }
+  }
+  h4 {
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 38px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
   }
   .showcase-img-tablet {
     display: none;
@@ -150,11 +146,8 @@ export const ShowcaseStyle = styled.section`
     }
   }
 
-  .showcase-section-3 > * {
-    flex: 1;
-  }
-
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 810px) {
+    margin-inline: 2.5rem;
     .showcase-section-1 {
       flex-direction: column;
       background-image: url("/showcase-1-background.png");
@@ -177,7 +170,6 @@ export const ShowcaseStyle = styled.section`
         padding-right: 3rem;
         h1 {
           text-align: center;
-          margin-bottom: 2.5;
         }
         p {
           text-align: center;
@@ -195,29 +187,15 @@ export const ShowcaseStyle = styled.section`
     }
   }
 
-  @media only screen and (max-width: 568px) {
+  @media only screen and (max-width: 428px) {
+    margin-inline: 1.5rem;
     .showcase-section-1 {
-    }
-    .showcase-section-3 {
-      flex-direction: column-reverse;
       .description {
-        padding: 5rem;
+        padding: 1.5rem;
       }
-      .showcase-img {
-        background-image: none;
-        img {
-          display: block;
-          flex: 1 1 100%;
-          min-width: 0;
-          object-fit: contain;
-          border-radius: 8px;
-        }
+      br {
+        display: none;
       }
-    }
-  }
-
-  @media only screen and (max-width: 475px) {
-    .showcase-section-1 {
     }
     .showcase-section-2 {
       .description {

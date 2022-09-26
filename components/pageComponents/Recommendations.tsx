@@ -15,7 +15,7 @@ const Recommendations = (prop: Product) => {
 
   return (
     <RecommendationStyle>
-      <h3 className="title">You may also like</h3>
+      <h3>You may also like</h3>
       <div className="boxes">
         {recommendations?.map((item) => {
           return (

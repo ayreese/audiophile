@@ -3,19 +3,12 @@ import styled from "styled-components";
 export const ProductInfoStyle = styled.div`
   display: flex;
   flex-direction: column;
-  box-sizing: border-box;
-  width: 90%;
-  box-sizing: border-box;
-  margin-bottom: 10rem;
-  margin-top: 10rem;
-  margin-left: auto;
-  margin-right: auto;
+  margin-block: 10rem;
+  margin-inline: 10.3rem;
   gap: 7.8125rem;
-
   .product-wrapper {
     display: flex;
     flex-direction: row;
-    max-width: 1600px;
     justify-content: space-between;
     margin-left: auto;
     margin-right: auto;
@@ -24,7 +17,6 @@ export const ProductInfoStyle = styled.div`
     align-items: center;
     .left {
       flex: 1 1 100%;
-      /* padding: 3rem; */
       text-align: center;
       margin-bottom: 2rem;
       img {
@@ -88,9 +80,8 @@ export const ProductInfoStyle = styled.div`
     }
   }
 
-  @media only screen and (max-width: 768px) {
-    padding-left: 1%;
-    padding-right: 1%;
+  @media only screen and (max-width: 810px) {
+    margin-inline: 2.5rem;
     .product-wrapper {
       .left {
         margin-bottom: 0;
@@ -105,17 +96,27 @@ export const ProductInfoStyle = styled.div`
     }
   }
 
-  @media only screen and (max-width: 568px) {
+  @media only screen and (max-width: 428px) {
+    margin-inline: 1.5rem;
+
     .product-wrapper {
       flex-direction: column;
       .left {
         margin-bottom: 3rem;
+        padding-left: 0;
         img {
           object-fit: cover;
         }
       }
       .right {
         padding-left: 0;
+        h2 {
+          font-size: 2rem;
+        }
+        .buttons {
+          .counter {
+          }
+        }
       }
     }
   }
@@ -123,22 +124,21 @@ export const ProductInfoStyle = styled.div`
 
 export const Features = styled.div`
   display: flex;
-  box-sizing: border-box;
-  margin-left: auto;
-  margin-right: auto;
+  margin-inline: 10.3rem;
   margin-bottom: 10rem;
-  width: 90%;
-  max-width: 1600px;
   gap: 7.8125rem;
+  h3 {
+    margin-bottom: 3rem;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 36px;
+    letter-spacing: 1.14286px;
+    text-transform: uppercase;
+  }
   .product-features {
     flex: 0 1 75%;
-    box-sizing: border-box;
     padding-right: 100px;
 
-    h3 {
-      text-transform: uppercase;
-      margin-bottom: 3rem;
-    }
     p {
       margin-bottom: 3rem;
       white-space: pre-wrap;
@@ -149,10 +149,7 @@ export const Features = styled.div`
     display: flex;
     flex-direction: column;
     text-align: left;
-    h3 {
-      text-transform: uppercase;
-      margin-bottom: 3rem;
-    }
+
     .box-content {
       display: flex;
       flex-direction: column;
@@ -172,8 +169,10 @@ export const Features = styled.div`
     }
   }
 
-  @media screen and (max-width: 780px) {
+  @media screen and (max-width: 810px) {
     flex-direction: column;
+    margin-inline: 2.5rem;
+
     .product-features {
       padding-right: 0;
     }
@@ -184,7 +183,6 @@ export const Features = styled.div`
         margin-top: 0;
       }
     }
-
     .product-wrapper {
       flex-direction: column;
       justify-items: center;
@@ -210,7 +208,8 @@ export const Features = styled.div`
       }
     }
   }
-  @media screen and (max-width: 560px) {
+  @media screen and (max-width: 428px) {
+    margin-inline: 1.5rem;
     .box-features {
       flex-direction: column;
     }
@@ -219,12 +218,8 @@ export const Features = styled.div`
 
 export const ProductPhotos = styled.div`
   display: flex;
-  box-sizing: border-box;
-  max-width: 1600px;
+  margin-inline: 10.3rem;
   gap: 1rem;
-  width: 90%;
-  margin-left: auto;
-  margin-right: auto;
   margin-bottom: 5rem;
   .left {
     display: flex;
@@ -235,6 +230,7 @@ export const ProductPhotos = styled.div`
     img {
       object-fit: contain;
       width: 100%;
+      border-radius: 0.5rem;
     }
   }
   .right {
@@ -248,8 +244,9 @@ export const ProductPhotos = styled.div`
     }
   }
 
-  @media screen and (max-width: 780px) {
+  @media screen and (max-width: 810px) {
     flex-direction: column;
+    margin-inline: 2.5rem;
     .box-features {
       flex-direction: row;
       justify-content: space-between;
@@ -263,5 +260,8 @@ export const ProductPhotos = styled.div`
         flex-basis: 50%;
       }
     }
+  }
+  @media screen and (max-width: 428px) {
+    margin-inline: 1.5rem;
   }
 `;

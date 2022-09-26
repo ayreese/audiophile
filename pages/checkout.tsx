@@ -40,9 +40,9 @@ const Checkout: NextPage = () => {
       <CheckoutStyle>
         <form action="" onSubmit={handleSubmit(onSubmit)}>
           <div className="formInfo">
-            <h1 className="pageTitle">Checkout</h1>
+            <h1 className="sectionTitle">Checkout</h1>
             <div className="billingDetails formSection">
-              <h2 className="title">Billing Details</h2>
+              <p className="title">Billing Details</p>
               <div className="inputFields">
                 <div className="inputRow">
                   <div className="labelAndInput">
@@ -97,7 +97,7 @@ const Checkout: NextPage = () => {
             </div>
 
             <div className="billingDetails formSection">
-              <h2 className="title">Shipping</h2>
+              <p className="title">Shipping</p>
               <div className="inputFields">
                 <div className="inputRow">
                   <div className="labelAndInput">
@@ -137,7 +137,7 @@ const Checkout: NextPage = () => {
             </div>
 
             <div className="paymentInfo formSection">
-              <h2 className="title">Payment Details</h2>
+              <p className="title">Payment Details</p>
               <div id="paymentSection" className="inputFields">
                 <div className="inputRow">
                   <h3>payment method</h3>
@@ -199,7 +199,7 @@ const Checkout: NextPage = () => {
                     <img src={item.image.desktop} alt="" />
                   </div>
                   <div className="itemInfo">
-                    <h6>{productName(item.name)}</h6>
+                    <p>{productName(item.name)}</p>
                     <p>${item.price}</p>
                   </div>
                   <div className="counter">x{item.quantity}</div>

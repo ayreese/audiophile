@@ -24,7 +24,7 @@ const Details: NextPage<{ product: string }> = ({ product }) => {
       </Head>
       <ProductStyle>
         <div className="page-title">
-          <h1>{elements.pageName}</h1>
+          <h1 className="homeProductTitle">{elements.pageName}</h1>
         </div>
       </ProductStyle>
       <ProductDescription>
@@ -35,8 +35,8 @@ const Details: NextPage<{ product: string }> = ({ product }) => {
                 <img src={product.image.desktop} alt="" />
               </div>
               <div className="right">
-                {product.new && <p>new product</p>}
-                <h2>{product.name}</h2>
+                {product.new && <p className="newProductTitle">new product</p>}
+                <h2 className="sectionTitle">{product.name}</h2>
                 <p>{product.description}</p>
                 <Link href={`/product/${product.slug}`} replace>
                   <Button primary={true}>

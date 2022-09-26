@@ -19,8 +19,8 @@ export const CartStyle = styled.div`
       background-color: ${({ theme }) => theme.colors.senary};
       z-index: 1000;
       position: absolute;
-      box-sizing: border-box;
-      padding-inline: 1.25rem;
+      padding-block: 2rem;
+      padding-inline: 2rem;
       right: 10rem;
       top: 2rem;
       border-radius: 0.5rem;
@@ -58,8 +58,6 @@ export const CartStyle = styled.div`
         align-items: center;
         margin-bottom: 1.5rem;
         .itemImg {
-          /* background-color: ${({ theme }) => theme.colors.tertiary}; */
-          /* border-radius: 0.5rem; */
           img {
             object-fit: contain;
             width: 4.5rem;
@@ -115,7 +113,7 @@ export const CartStyle = styled.div`
     }
   }
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 810px) {
     .main {
       top: 100%;
       .card {
@@ -145,6 +143,5 @@ export const CartStyle = styled.div`
 
 export const CheckoutButton = styled(Button)`
   width: 100%;
-  margin-bottom: 2rem;
   background-color: ${({ theme }) => theme.colors.primary};
 `;

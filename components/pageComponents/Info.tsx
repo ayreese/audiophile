@@ -13,7 +13,7 @@ const Info = ({ prop }: Prop) => {
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.2, duration: 1 }}
             viewport={{ once: true }}>
-            <h2>
+            <h2 className="sectionTitle">
               Bringing you the <br />
               <span>best</span> audio gear
             </h2>
@@ -45,8 +45,8 @@ const Info = ({ prop }: Prop) => {
         </>
       ) : (
         <>
-          <div className="left">
-            <h2>
+          <article className="left">
+            <h2 className="sectionTitle">
               Bringing you the <br />
               <span>best</span> audio gear
             </h2>
@@ -59,7 +59,7 @@ const Info = ({ prop }: Prop) => {
               people who make Audiophile the best place to buy your portable
               audio equipment.
             </p>
-          </div>
+          </article>
           <div className="right">
             <picture>
               <source
