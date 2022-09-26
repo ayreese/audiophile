@@ -36,11 +36,10 @@ export const CartStyle = styled.div`
           background-color: transparent;
         }
         .removeButton {
-          align-self: center;
           opacity: 0.7;
           button {
-            padding-block: 0.75rem;
-            padding-inline: 3rem;
+            padding-block: 0 3rem;
+            padding-inline: 7rem 0;
             flex-basis: 100%;
             background-color: transparent;
             border: none;

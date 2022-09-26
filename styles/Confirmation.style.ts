@@ -7,6 +7,14 @@ export const ConfirmationStyle = styled.div`
   left: 0;
   height: 100vh;
   z-index: 100;
+  h3 {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 36px;
+    letter-spacing: 1.14286px;
+    text-transform: uppercase;
+    margin-block: 1.5rem;
+  }
   .card {
     height: auto;
     width: 33%;
@@ -130,9 +138,36 @@ export const ConfirmationStyle = styled.div`
     }
   }
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 810px) {
+    h3 {
+      font-size: 2rem;
+    }
+    .card {
+      width: 66%;
+    }
   }
 
-  @media only screen and (max-width: 568px) {
+  @media only screen and (max-width: 428px) {
+    h3 {
+      font-size: 1.5rem;
+    }
+    .card {
+      width: 95%;
+      padding-inline: 1rem;
+      top: 4rem;
+    }
+    .receipt {
+      flex-direction: column;
+      .left {
+        border-radius: 0.5rem 0.5rem 0 0;
+
+        .borderLine {
+          margin-bottom: 0;
+        }
+      }
+      .right {
+        border-radius: 0 0 0.5rem 0.5rem;
+      }
+    }
   }
 `;

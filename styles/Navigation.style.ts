@@ -74,7 +74,7 @@ export const Nav = styled.header`
     }
   }
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 810px) {
     padding-inline: 2.5rem;
     z-index: 100;
     position: relative;

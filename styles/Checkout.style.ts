@@ -186,7 +186,7 @@ export const CheckoutStyle = styled.div`
       }
     }
   }
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 810px) {
     form {
       flex-direction: column;
       padding-inline: 2rem;
@@ -272,7 +272,7 @@ export const CheckoutStyle = styled.div`
   .card {
     padding-inline: 2rem;
   }
-  @media only screen and (max-width: 568px) {
+  @media only screen and (max-width: 428px) {
     form {
       .formSection {
         .inputFields {
