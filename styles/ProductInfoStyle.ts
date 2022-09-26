@@ -220,7 +220,7 @@ export const ProductPhotos = styled.div`
   display: flex;
   margin-inline: 10.3rem;
   gap: 1rem;
-  margin-bottom: 5rem;
+  margin-bottom: 7.5rem;
   .left {
     display: flex;
     box-sizing: border-box;
