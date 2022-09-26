@@ -5,7 +5,6 @@ export const RecommendationStyle = styled.div`
   flex-direction: column;
   align-items: center;
   margin-inline: 10.3rem;
-  max-width: 1600px;
   h3 {
     text-transform: uppercase;
     font-weight: 700;
@@ -13,6 +12,7 @@ export const RecommendationStyle = styled.div`
     line-height: 36px;
     letter-spacing: 1.14286px;
     text-transform: uppercase;
+    margin-bottom: 1.5rem;
   }
   .boxes {
     display: flex;
