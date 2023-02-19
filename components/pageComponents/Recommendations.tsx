@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
-import { RecommendationStyle } from "../../styles/Recommendations.style";
 import { suggestions } from "../functions/Suggestion";
 import { Product } from "../interface/interfaces";
 import data from "../../data.json";

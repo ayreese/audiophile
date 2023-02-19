@@ -8,7 +8,7 @@ import {Prop} from "../interface/interfaces";
 
 const ProductType = ({prop}: Prop) => {
     return (
-        <div className="category-container">
+        <div className="category-card-container">
             {prop ? (
                 <>
                     <motion.div

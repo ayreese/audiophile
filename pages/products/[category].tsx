@@ -1,13 +1,8 @@
 import React from "react";
 import { GetStaticPaths, NextPage } from "next";
-import { Button } from "../../styles/Button.style";
-import {
-  ProductDescription,
-  ProductStyle,
-} from "../../styles/ProductPage.style";
 import Link from "next/link";
-import Info from "../../components/pageComponents/Info";
-import ProductType from "../../components/pageComponents/ProductType";
+import Info from "../../components/pageComponents/CompanyInfo";
+import ProductType from "../../components/pageComponents/CategoryCards";
 import data from "../../data.json";
 import Head from "next/head";
 
@@ -22,12 +17,12 @@ const Details: NextPage<{ product: string }> = ({ product }) => {
         <meta name={newLocal} content="width=device-width, initial-scale=1.0" />
         <title>{elements.pageName.toUpperCase()}</title>
       </Head>
-      <ProductStyle>
+      <div className="category-container">
         <div className="page-title">
           <h1 className="homeProductTitle">{elements.pageName}</h1>
         </div>
-      </ProductStyle>
-      <ProductDescription>
+      </div>
+      <div className="description-container">
         {products.map((product: any) => {
           return (
             <div key={product.id} className="product-wrapper">
@@ -39,15 +34,15 @@ const Details: NextPage<{ product: string }> = ({ product }) => {
                 <h2 className="sectionTitle">{product.name}</h2>
                 <p>{product.description}</p>
                 <Link href={`/product/${product.slug}`} replace>
-                  <Button primary={true}>
+                  <button >
                     <a>see product</a>
-                  </Button>
+                  </button>
                 </Link>
               </div>
             </div>
           );
         })}
-      </ProductDescription>
+      </div>
       <ProductType prop={false} />
       <Info prop={false} />
     </>

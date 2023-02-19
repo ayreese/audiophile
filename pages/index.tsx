@@ -1,8 +1,8 @@
 import Head from "next/head";
 import type { NextPage } from "next";
 import Showcase from "../components/pageComponents/Showcase";
-import Info from "../components/pageComponents/Info";
-import ProductType from "../components/pageComponents/ProductType";
+import Info from "../components/pageComponents/CompanyInfo";
+import ProductType from "../components/pageComponents/CategoryCards";
 import Hero from "../components/pageComponents/Hero";
 
 const Home: NextPage = () => {
