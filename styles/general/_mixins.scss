@@ -21,7 +21,7 @@
     &:hover {
       background-color: $secondary-hover;
     }
-  } @else if $btn == tertiary {
+  } @else if $btn == border-btn {
     background-color: transparent;
     border: solid 2px $off-black;
     color: $off-black;
@@ -29,6 +29,13 @@
       background-color: $black;
       color: $off-white;
     }
+  } @else if $btn == word-btn {
+      background-color: transparent;
+      border: none;
+      color: $off-black;
+      &:hover {
+          color: $primary;
+      }
   }
 
   @media only screen and (max-width: 428px) {

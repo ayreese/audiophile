@@ -24,7 +24,7 @@ const Cart = () => {
   }, [value]);
 
   return (
-    <CartStyle>
+    <div className="cart-container">
       <motion.div
         className="main"
         initial={{ opacity: 0 }}
@@ -89,20 +89,20 @@ const Cart = () => {
             <div className="checkoutButton">
               {value.length > 0 ? (
                 <Link href="/checkout">
-                  <CheckoutButton primary={true} onClick={openCart}>
+                  <button  onClick={openCart}>
                     <a>checkout</a>
-                  </CheckoutButton>
+                  </button>
                 </Link>
               ) : (
-                <CheckoutButton primary={false}>
+                      <button>
                   <a>checkout</a>
-                </CheckoutButton>
+                </button>
               )}
             </div>
           </div>
         </motion.div>
       </motion.div>
-    </CartStyle>
+    </div>
   );
 };
 
