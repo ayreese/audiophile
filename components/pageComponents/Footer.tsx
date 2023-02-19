@@ -1,11 +1,10 @@
 import Link from "next/link";
-import { FooterStyle } from "../../styles/Footer.style";
 import { motion } from "framer-motion";
 
 const Footer = () => {
   return (
     <>
-      <FooterStyle>
+      <div className="footer-container">
         <div className="design-section">
           <div className="design"></div>
         </div>
@@ -84,7 +83,7 @@ const Footer = () => {
             </Link>
           </div>
         </div>
-      </FooterStyle>
+      </div>
     </>
   );
 };
