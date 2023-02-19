@@ -6,7 +6,7 @@
   align-items: center;
   padding-block: 3rem;
   width: 100%;
-  background-color: $secondary-black;
+  background-color: $off-black;
   padding-inline: 3rem;
   box-sizing: border-box;
   z-index: 100;
@@ -81,7 +81,7 @@
       display: block;
       font-size: 1.5rem;
       color: white;
-      background-color: $secondary-black;
+      background-color: $off-black;
       border: none;
     }
     .logo {
@@ -93,7 +93,7 @@
       top: 100%;
       left: -1%;
       justify-content: space-between;
-      background-color: $secondary-black;
+      background-color: $off-black;
 
       height: 100vh;
 

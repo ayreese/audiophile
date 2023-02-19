@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import { motion } from "framer-motion";
+import {motion} from "framer-motion";
 
 interface TitleProps {
-  readonly primary?: boolean;
+    readonly primary?: boolean;
 }
 
 export const Button = styled.button<TitleProps>`
@@ -15,17 +15,17 @@ export const Button = styled.button<TitleProps>`
   cursor: pointer;
   min-width: auto;
   border: none;
-  color: ${({ theme }) => theme.colors.senary};
+  color: ${({theme}) => theme.colors.senary};
   background-color: ${(props) =>
     props.primary ? props.theme.colors.primary : props.theme.colors.septenary};
   &:hover {
     background-color: ${(props) =>
-      props.primary ? props.theme.colors.quinary : props.theme.colors.octonary};
+    props.primary ? props.theme.colors.quinary : props.theme.colors.octonary};
   }
   a {
     text-decoration: none;
     cursor: pointer;
-    color: ${({ theme }) => theme.colors.senary};
+    color: ${({theme}) => theme.colors.senary};
   }
 
   @media only screen and (max-width: 428px) {
