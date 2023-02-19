@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { HeroStyle } from "../../styles/Hero.style";
 import React from "react";
 import { motion } from "framer-motion";
 import { Button } from "../../styles/Button.style";

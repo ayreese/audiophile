@@ -33,55 +33,51 @@ const Navigation = () => {
                     </a>
                 </Link>
             </div>
-            <AnimatePresence>
-                {menuOpen && (
-                    <motion.nav className={menuOpen ? "open" : "close"} initial={{x: -300}} animate={{x: 0}}
-                                transition={{ease: "easeOut", duration: .5}} exit={{x: -300}}>
-                        <ul>
-                            <li>
-                                <Link href="/">
-                                    <motion.a
-                                        whileHover={{color: "#d87d4a", cursor: "pointer", scale: 4}}
-                                        onClick={handleClose}>
-                                        {" "}
-                                        home
-                                    </motion.a>
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="/products/headphones">
-                                    <motion.a
-                                        whileHover={{color: "#d87d4a", cursor: "pointer"}}
-                                        onClick={handleClose}>
-                                        {" "}
-                                        headphones
-                                    </motion.a>
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="/products/speakers">
-                                    <motion.a
-                                        whileHover={{color: "#d87d4a", cursor: "pointer"}}
-                                        onClick={handleClose}>
-                                        {" "}
-                                        speakers
-                                    </motion.a>
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="/products/earphones">
-                                    <motion.a
-                                        whileHover={{color: "#d87d4a", cursor: "pointer"}}
-                                        onClick={handleClose}>
-                                        {" "}
-                                        earphones
-                                    </motion.a>
-                                </Link>
-                            </li>
-                        </ul>
-                    </motion.nav>
-                )}
-            </AnimatePresence>
+
+            <nav className={menuOpen ? "open" : "close"} >
+                <ul>
+                    <li>
+                        <Link href="/">
+                            <motion.a
+                                whileHover={{color: "#d87d4a", cursor: "pointer", scale: 4}}
+                                onClick={handleClose}>
+                                {" "}
+                                home
+                            </motion.a>
+                        </Link>
+                    </li>
+                    <li>
+                        <Link href="/products/headphones">
+                            <motion.a
+                                whileHover={{color: "#d87d4a", cursor: "pointer"}}
+                                onClick={handleClose}>
+                                {" "}
+                                headphones
+                            </motion.a>
+                        </Link>
+                    </li>
+                    <li>
+                        <Link href="/products/speakers">
+                            <motion.a
+                                whileHover={{color: "#d87d4a", cursor: "pointer"}}
+                                onClick={handleClose}>
+                                {" "}
+                                speakers
+                            </motion.a>
+                        </Link>
+                    </li>
+                    <li>
+                        <Link href="/products/earphones">
+                            <motion.a
+                                whileHover={{color: "#d87d4a", cursor: "pointer"}}
+                                onClick={handleClose}>
+                                {" "}
+                                earphones
+                            </motion.a>
+                        </Link>
+                    </li>
+                </ul>
+            </nav>
 
 
             <div className="cart">
