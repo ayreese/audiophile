@@ -7,7 +7,7 @@ import { Button } from "../../styles/Button.style";
 
 const Hero = () => {
   return (
-    <HeroStyle>
+    <div className="hero-container">
       <motion.div
         className="left"
         initial={{ opacity: 0 }}
@@ -41,7 +41,7 @@ const Hero = () => {
           layout="responsive"
         />
       </motion.div>
-    </HeroStyle>
+    </div>
   );
 };
 
