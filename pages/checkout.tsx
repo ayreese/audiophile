@@ -37,7 +37,7 @@ const Checkout: NextPage = () => {
         <title>Checkout</title>
       </Head>
       {isSubmitSuccessful && <Confirmation items={value} />}
-      <CheckoutStyle>
+      <div className="checkout-container">
         <form action="" onSubmit={handleSubmit(onSubmit)}>
           <div className="formInfo">
             <h1 className="sectionTitle">Checkout</h1>
@@ -226,7 +226,7 @@ const Checkout: NextPage = () => {
             </div>
           </div>
         </form>
-      </CheckoutStyle>
+      </div>
     </>
   );
 };
