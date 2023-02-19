@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import {Type} from "../../styles/ProductTypeStyle";
 import headphonesShop from "../../public/headphones-shop.png";
 import speakersShop from "../../public/speaker-shop.png";
 import earphonesShop from "../../public/earphone-shop.png";
@@ -9,7 +8,7 @@ import {Prop} from "../interface/interfaces";
 
 const ProductType = ({prop}: Prop) => {
     return (
-        <section className="category-container">
+        <div className="category-container">
             {prop ? (
                 <>
                     <motion.div
@@ -139,7 +138,7 @@ const ProductType = ({prop}: Prop) => {
                     </div>
                 </>
             )}
-        </section>
+        </div>
     );
 };
 

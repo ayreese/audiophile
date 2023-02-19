@@ -1,6 +1,6 @@
 @use "./variables" as *;
 
-@mixin btn($prim: false) {
+@mixin btn($btn) {
   padding: 0.9375rem 1.875rem;
   text-align: center;
   text-decoration: none;
@@ -11,21 +11,24 @@
   min-width: auto;
   border: none;
   color: $white;
-  @if $prim {
+  @if $btn == primary {
     background-color: $primary;
     &:hover {
       background-color: $primary-hover;
     }
-  } @else {
-    background-color: $black;
+  } @else if $btn == secondary {
+    background-color: $off-black;
     &:hover {
-      background-color: $octonary;
+      background-color: $secondary-hover;
     }
-  }
-  a {
-    text-decoration: none;
-    cursor: pointer;
-    color: white;
+  } @else if $btn == tertiary {
+    background-color: transparent;
+    border: solid 2px $off-black;
+    color: $off-black;
+    &:hover {
+      background-color: $black;
+      color: $off-white;
+    }
   }
 
   @media only screen and (max-width: 428px) {

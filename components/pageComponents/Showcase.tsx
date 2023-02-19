@@ -5,7 +5,7 @@ import { Prop } from "../interface/interfaces";
 
 const Showcase = ({ prop }: Prop) => {
   return (
-    <ShowcaseStyle>
+    <section className="showcase-container">
       {prop ? (
         <>
           <motion.div
@@ -31,11 +31,11 @@ const Showcase = ({ prop }: Prop) => {
                   Upgrade to premium speakers that are phenomenally built to
                   deliver truly remarkable sound.
                 </p>
-                <div className="button">
+                
                   <Link href="/product/zx9-speaker">
                     <a>See Products</a>
                   </Link>
-                </div>
+
               </div>
             </div>
           </motion.div>
@@ -140,7 +140,7 @@ const Showcase = ({ prop }: Prop) => {
           </motion.div>
         </>
       )}
-    </ShowcaseStyle>
+    </section>
   );
 };
 
