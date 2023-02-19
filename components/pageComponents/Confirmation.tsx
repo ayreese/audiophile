@@ -1,7 +1,6 @@
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { useCart } from "../../context/CartContext";
-import { ConfirmationStyle } from "../../styles/Confirmation.style";
 import { formatTotal, getPrice, productName } from "../functions/cartFunctions";
 import { Products } from "../interface/interfaces";
 
@@ -13,7 +12,7 @@ const Confirmation = ({ items }: Products) => {
   const itemToShow = () => setMore(!more);
 
   return (
-    <ConfirmationStyle>
+    <div className="confirmation-container">
       <div className="card">
         <img src="check.png" alt="" />
         <h3>
@@ -89,7 +88,7 @@ const Confirmation = ({ items }: Products) => {
           </Link>
         </button>
       </div>
-    </ConfirmationStyle>
+    </div>
   );
 };
 

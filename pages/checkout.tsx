@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
-import { CheckoutStyle } from "../styles/Checkout.style";
 import { FormValues, Product } from "../components/interface/interfaces";
 import {
   getPrice,

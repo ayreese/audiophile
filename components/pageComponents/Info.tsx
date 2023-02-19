@@ -1,4 +1,3 @@
-import { InfoStyle } from "../../styles/InfoStyle";
 import { motion } from "framer-motion";
 import { Prop } from "../interface/interfaces";
 const Info = ({ prop }: Prop) => {
