@@ -62,19 +62,19 @@ const Cart = () => {
                                     <p>${item.price}</p>
                                 </div>
                                 <div className="counter">
-                                    <Button
+                                    <button
                                         onClick={() => {
                                             decrementItem(item);
                                         }}>
                                         -
-                                    </Button>
+                                    </button>
                                     {item.quantity}{" "}
-                                    <Button
+                                    <button
                                         onClick={() => {
                                             incrementItem(item);
                                         }}>
                                         +
-                                    </Button>
+                                    </button>
                                 </div>
                             </div>
                         );

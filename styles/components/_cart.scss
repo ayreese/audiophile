@@ -80,22 +80,7 @@
     }
 
     .counter {
-      color: $black;
-      background-color: $background-color;
-      text-align: center;
-      white-space: nowrap;
-
-      button {
-        color: $black;
-        background-color: $background-color;
-        white-space: nowrap;
-      }
-
-      button:hover {
-        color: $primary;
-
-        //        background-color: $white;
-      }
+      @include counter-btn;
     }
   }
 

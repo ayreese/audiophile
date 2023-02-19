@@ -1,5 +1,5 @@
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useCart } from "../../context/CartContext";
 import { formatTotal, getPrice, productName } from "../functions/cartFunctions";
 import { Products } from "../interface/interfaces";

@@ -37,7 +37,7 @@ const Details: NextPage<{ product: string }> = ({ product }) => {
         <meta name={newLocal} content="width=device-width, initial-scale=1.0" />
         <title>{item.name}</title>
       </Head>
-      <ProductInfoStyle>
+      <div className="product-info-container">
         <div className="product-wrapper">
           <div className="left">
             <Image
@@ -68,8 +68,8 @@ const Details: NextPage<{ product: string }> = ({ product }) => {
             </div>
           </div>
         </div>
-      </ProductInfoStyle>
-      <Features>
+      </div>
+      <div className="features-container">
         <div className="product-features">
           <h3>features</h3>
           <p>{item.features}</p>
@@ -87,8 +87,8 @@ const Details: NextPage<{ product: string }> = ({ product }) => {
             })}
           </div>
         </div>
-      </Features>
-      <ProductPhotos>
+      </div>
+      <div className="photo-container">
         <div className="left">
           <img src={item.gallery.first.desktop} alt="gallery image" />
           <img src={item.gallery.second.desktop} alt="gallery image" />
@@ -96,7 +96,7 @@ const Details: NextPage<{ product: string }> = ({ product }) => {
         <div className="right">
           <img src={item.gallery.third.desktop} alt="gallery image" />
         </div>
-      </ProductPhotos>
+      </div>
       <Recommendations {...item} />
       <ProductType prop={false} />
       <Info prop={false} />

@@ -30,15 +30,30 @@
       color: $off-white;
     }
   } @else if $btn == word-btn {
-      background-color: transparent;
-      border: none;
-      color: $off-black;
-      &:hover {
-          color: $primary;
-      }
+    background-color: transparent;
+    border: none;
+    color: $off-black;
+    &:hover {
+      color: $primary;
+    }
   }
 
   @media only screen and (max-width: 428px) {
     padding: 0.9375rem 1.5rem;
   }
+}
+
+@mixin counter-btn {
+  color: $black;
+  background-color: $background-color;
+  text-align: center;
+  white-space: nowrap;
+
+  button {
+    color: $black;
+    background-color: $background-color;
+    @include btn($btn: word-btn)
+  }
+
+
 }
