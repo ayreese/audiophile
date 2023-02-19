@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Prop } from "../interface/interfaces";
 const Info = ({ prop }: Prop) => {
   return (
-    <InfoStyle>
+    <div className="info-container">
       {prop ? (
         <>
           <motion.div
@@ -71,7 +71,7 @@ const Info = ({ prop }: Prop) => {
           </div>
         </>
       )}
-    </InfoStyle>
+    </div>
   );
 };
 
