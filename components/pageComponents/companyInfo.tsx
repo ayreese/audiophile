@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Prop } from "../interface/interfaces";
 const Info = ({ prop }: Prop) => {
   return (
-    <div className="info-container">
+    <div className="company-info-container">
       {prop ? (
         <>
           <motion.div

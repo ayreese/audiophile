@@ -14,7 +14,7 @@ const Recommendations = (prop: Product) => {
   }, []);
 
   return (
-    <RecommendationStyle>
+    <div className="recommendations-container">
       <h3>You may also like</h3>
       <div className="boxes">
         {recommendations?.map((item) => {
@@ -33,7 +33,7 @@ const Recommendations = (prop: Product) => {
           );
         })}
       </div>
-    </RecommendationStyle>
+    </div>
   );
 };
 
