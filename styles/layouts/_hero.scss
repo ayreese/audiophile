@@ -1,8 +1,6 @@
 @use "../general" as *;
 
 .hero-container {
-//    max-width: min(1600px, 100%);
-//    margin-inline: auto;
   display: flex;
   align-items: center;
   background-color: $off-black;
@@ -18,7 +16,7 @@
     width: 50%;
   }
 
-  @media only screen and (max-width: 810px) {
+  @media only screen and (max-width: $md-screen) {
     height: auto;
     background-image: url("../../public/assets/home/tablet/image-header.jpg");
 
@@ -29,7 +27,7 @@
       width: auto;
     }
   }
-  @media only screen and (max-width: 428px) {
+  @media only screen and (max-width: $sm-screen) {
     .hero-content-wrapper {
       padding-top: 10rem;
       padding-inline: 1rem;

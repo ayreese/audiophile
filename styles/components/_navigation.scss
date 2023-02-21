@@ -1,8 +1,6 @@
 @use "../general" as *;
 
 .nav-container {
-//    max-width: min(1600px, 100%);
-//    margin-inline: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -70,7 +68,7 @@
     }
   }
 
-  @media only screen and (max-width: 810px) {
+  @media only screen and (max-width: $md-screen) {
     padding-inline: 2.5rem;
     z-index: 100;
     position: relative;
