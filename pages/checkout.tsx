@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Image from "next/image";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { FormValues, Product } from "../components/interface/interfaces";
 import {
@@ -195,7 +196,7 @@ const Checkout: NextPage = () => {
               return (
                 <div key={item.id} className="center">
                   <div className="itemImg">
-                    <img src={item.image.desktop} alt="" />
+                      <Image src={item.image.desktop} alt="" width={100} height={100}/>
                   </div>
                   <div className="itemInfo">
                     <p>{productName(item.name)}</p>

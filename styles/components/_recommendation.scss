@@ -4,7 +4,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-inline: 10.3rem;
+  max-width: $container-width;
+  margin-inline: auto;
 
   h3 {
     text-transform: uppercase;
@@ -26,10 +27,9 @@
       text-align: center;
 
       .imageBox {
-        img {
-          object-fit: contain;
-          width: 100%;
-        }
+        position: relative;
+        width: 100%;
+
       }
 
       h4 {
@@ -49,13 +49,11 @@
     }
   }
 
-  @media only screen and (max-width: 810px) {
-    margin-inline: 2.5rem;
+  @media only screen and (max-width: $md-screen) {
+
   }
 
-  @media only screen and (max-width: 428px) {
-    margin-inline: 1.5rem;
-
+  @media only screen and (max-width: $sm-screen) {
     h3 {
       font-size: 1.5rem;
     }

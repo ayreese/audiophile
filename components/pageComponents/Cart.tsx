@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from "react";
-import {Button} from "../../styles/Button.style";
 import {Product} from "../interface/interfaces";
 import {useCart} from "../../context/CartContext";
 import {

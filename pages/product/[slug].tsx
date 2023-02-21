@@ -3,7 +3,6 @@ import Image from "next/image";
 import React, {useState} from "react";
 import {Product} from "../../components/interface/interfaces";
 import Info from "../../components/pageComponents/CompanyInfo";
-import {Button} from "../../styles/Button.style";
 import {useCart} from "../../context/CartContext";
 import ProductType from "../../components/pageComponents/CategoryCards";
 import Recommendations from "../../components/pageComponents/Recommendations";
@@ -49,14 +48,15 @@ const Details: NextPage<{ product: string }> = ({product}) => {
                         <p className="price">${item.price}</p>
                         <div className="buttons">
                             <div className="counter">
-                                <Button onClick={() => decrement()}>-</Button>
-                                {quantity} <Button onClick={() => increment()}>+</Button>
+                                <button onClick={() => decrement()}>-</button>
+                                {quantity}
+                                <button onClick={() => increment()}>+</button>
                             </div>
                             <button
                                 onClick={() => {
                                     addItem(cartItem);
                                     setQuantity(1);
-                            }}>
+                                }}>
 
                                 add to cart
                             </button>

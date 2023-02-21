@@ -20,7 +20,7 @@ const Recommendations = (prop: Product) => {
           return (
             <div key={item.id} className="productBox">
               <div className="imageBox">
-                <img src={item.categoryImage.mobile} alt="" />
+                  <Image src={item.image.mobile} alt="" width={500}  height={500} />
               </div>
               <h4>{item.others[0].name}</h4>
               <Link href={`/product/${item.slug}`}>

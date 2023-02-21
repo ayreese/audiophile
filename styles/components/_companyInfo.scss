@@ -1,19 +1,16 @@
 @use "../general" as *;
 
 .company-info-container {
-  display: flex;
-  margin-inline: 10.3rem;
-  padding: 9.125rem 0;
-  position: relative;
-  align-items: center;
+  @include Container;
+  @include two-column-grid;
+  margin-block: 8rem;
 
   .left {
     padding-top: min(9.125rem, 10vw);
     padding-bottom: min(9.125rem, 5rem);
-    padding-right: min(7.8125rem, 5rem);
     text-transform: uppercase;
     flex: 1 1 100%;
-    overflow: hidden;
+
   }
 
   span {
@@ -29,6 +26,7 @@
       object-fit: contain;
       width: 100%;
       max-width: 100%;
+      border-radius: .5rem;
     }
   }
 

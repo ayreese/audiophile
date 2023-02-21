@@ -1,124 +1,42 @@
 @use "../general" as *;
 
 .product-info-container {
-  display: flex;
-  flex-direction: column;
+  @include Container;
   margin-block: 10rem;
-  margin-inline: 10.3rem;
-  gap: 7.8125rem;
 
   .product-wrapper {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 3rem;
-    border-radius: 0.5rem;
-    align-items: center;
+    @include two-column-grid;
 
-    .left {
-      flex: 1 1 100%;
-      text-align: center;
-      margin-bottom: 2rem;
+    .right .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 5%;
 
-      img {
-        object-fit: contain;
-        max-width: 100%;
-      }
-    }
-
-    .right {
-      flex: 1 1 100%;
-      padding-left: 7.5rem;
-
-      h2 {
-        text-transform: uppercase;
-        padding-bottom: 1rem;
-        margin: 0;
+      .counter {
+        @include counter-btn;
       }
 
-      p:nth-child(1) {
-        text-transform: uppercase;
-        color: $primary;
-        margin: 0;
-      }
-
-      p {
-        padding-bottom: 1rem;
-        margin: 0;
-      }
-
-      .buttons {
-        display: flex;
-        gap: 5%;
-        width: 75%;
-
-        //   flex-direction: row-reverse;
-        .counter {
-          @include counter-btn;
-        }
-
-        button {
-          @include btn($primary)
-
-        }
+      button {
+        @include btn($primary);
 
       }
+
     }
   }
 
-  @media only screen and (max-width: 810px) {
-    margin-inline: 2.5rem;
-    .product-wrapper {
-      .left {
-        margin-bottom: 0;
-      }
 
-      .right {
-        padding-left: 1rem;
-      }
-    }
+  @media only screen and (max-width: $md-screen) {
 
-    h1 {
-      font-size: 3.5rem;
-    }
   }
 
-  @media only screen and (max-width: 428px) {
-    margin-inline: 1.5rem;
+  @media only screen and (max-width: $sm-screen) {
 
-    .product-wrapper {
-      flex-direction: column;
-
-      .left {
-        margin-bottom: 3rem;
-        padding-left: 0;
-
-        img {
-          object-fit: cover;
-        }
-      }
-
-      .right {
-        padding-left: 0;
-
-        h2 {
-          font-size: 2rem;
-        }
-
-        .buttons {
-          .counter {
-          }
-        }
-      }
-    }
   }
 }
 
 .features-container {
+  @include Container;
   display: flex;
-  margin-inline: 10.3rem;
   margin-bottom: 10rem;
   gap: 7.8125rem;
 
@@ -168,7 +86,7 @@
     }
   }
 
-  @media screen and (max-width: 810px) {
+  @media screen and (max-width: $md-screen) {
     flex-direction: column;
     margin-inline: 2.5rem;
 
@@ -213,7 +131,7 @@
       }
     }
   }
-  @media screen and (max-width: 428px) {
+  @media screen and (max-width: $sm-screen) {
     margin-inline: 1.5rem;
     .box-features {
       flex-direction: column;
@@ -222,51 +140,57 @@
 }
 
 .photo-container {
+  @include Container;
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 7.5rem;
+
+  .left {
     display: flex;
-    margin-inline: 10.3rem;
+    box-sizing: border-box;
     gap: 1rem;
-    margin-bottom: 7.5rem;
-    .left {
-        display: flex;
-        box-sizing: border-box;
-        gap: 1rem;
-        flex-direction: column;
-        flex-basis: 100%;
-        img {
-            object-fit: contain;
-            width: 100%;
-            border-radius: 0.5rem;
-        }
+    flex-direction: column;
+    flex-basis: 100%;
+
+    img {
+      object-fit: contain;
+      width: 100%;
+      border-radius: 0.5rem;
     }
+  }
+
   .right {
-        flex-basis: 100%;
-        box-sizing: border-box;
-        img {
-            object-fit: cover;
-            width: 100%;
-            height: 100%;
-            border-radius: 8px;
-        }
+    flex-basis: 100%;
+    box-sizing: border-box;
+
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      border-radius: 8px;
     }
+  }
 
   @media screen and (max-width: 810px) {
-        flex-direction: column;
-        margin-inline: 2.5rem;
-        .box-features {
-            flex-direction: row;
-            justify-content: space-between;
-            margin-bottom: 10rem;
-            align-content: flex-start;
-            h3 {
-                flex-basis: 50%;
-                text-align: left;
-            }
+    flex-direction: column;
+    margin-inline: 2.5rem;
+    .box-features {
+      flex-direction: row;
+      justify-content: space-between;
+      margin-bottom: 10rem;
+      align-content: flex-start;
+
+      h3 {
+        flex-basis: 50%;
+        text-align: left;
+      }
+
       .box-content {
-                flex-basis: 50%;
-            }
-        }
+        flex-basis: 50%;
+      }
     }
+  }
   @media screen and (max-width: 428px) {
-        margin-inline: 1.5rem;
-    }
+    margin-inline: 1.5rem;
+  }
 }

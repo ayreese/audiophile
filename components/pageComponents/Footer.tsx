@@ -1,5 +1,14 @@
+import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import logo from "../../public/assets/shared/desktop/logo.svg";
+import facebook from "../../public/assets/shared/desktop/icon-facebook.svg"
+import instagram from "../../public/assets/shared/desktop/icon-instagram.svg"
+import twitter from "../../public/assets/shared/desktop/icon-twitter.svg"
+
+
+
+
 
 const Footer = () => {
   return (
@@ -10,7 +19,13 @@ const Footer = () => {
         </div>
         <div className="info">
           <div className="logo-links">
-            <img src="/audiophile 2.png" alt="" />
+              <Image
+                  src={logo}
+                  alt="headphones"
+                  layout="intrinsic"
+                  objectFit="contain"
+                  objectPosition="center"
+              />
             <ul>
               <li>
                 <Link href="/">
@@ -68,17 +83,35 @@ const Footer = () => {
           <div className="social">
             <Link href="https://www.facebook.com" passHref={true}>
               <a>
-                <img src="/facebook.png" alt="" />
+               <Image
+                  src={facebook}
+                  alt="headphones"
+                  layout="intrinsic"
+                  objectFit="contain"
+                  objectPosition="center"
+               />
               </a>
             </Link>
             <Link href="https://www.twitter.com" passHref={true}>
               <a>
-                <img src="/twitter.png" alt="" />
+               <Image
+                  src={twitter}
+                  alt="headphones"
+                  layout="intrinsic"
+                  objectFit="contain"
+                  objectPosition="center"
+               />
               </a>
             </Link>
             <Link href="https://www.instagram.com" passHref={true}>
               <a>
-                <img src="/instagram.png" alt="" />
+                <Image
+                  src={instagram}
+                  alt="headphones"
+                  layout="intrinsic"
+                  objectFit="contain"
+                  objectPosition="center"
+                />
               </a>
             </Link>
           </div>

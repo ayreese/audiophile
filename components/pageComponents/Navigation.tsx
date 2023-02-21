@@ -5,8 +5,9 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faClose, faBars} from "@fortawesome/free-solid-svg-icons";
 import Cart from "./Cart";
 import {useCart} from "../../context/CartContext";
-import {motion, AnimatePresence} from "framer-motion";
-import logo from "../../public/audiophile 2.png";
+import {motion} from "framer-motion";
+import logo from "../../public/assets/shared/desktop/logo.svg";
+import cart from "../../public/assets/shared/desktop/icon-cart.svg"
 
 const Navigation = () => {
     const {openCart, open} = useCart();
@@ -34,7 +35,7 @@ const Navigation = () => {
                 </Link>
             </div>
 
-            <nav className={menuOpen ? "open" : "close"} >
+            <nav className={menuOpen ? "open" : "close"}>
                 <ul>
                     <li>
                         <Link href="/">
@@ -82,7 +83,7 @@ const Navigation = () => {
 
             <div className="cart">
                 <button onClick={openCart}>
-                    <img src="/cart.png" alt=""/>
+                    <Image src={cart} alt="product-image headphones"/>
                 </button>
             </div>
         </div>

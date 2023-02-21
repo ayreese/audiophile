@@ -1,5 +1,43 @@
 @use "./variables" as *;
 
+@mixin Container {
+  max-width: $container-width;
+  margin-inline: auto;
+}
+
+@mixin Font-Styling {
+  font-style: normal;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+@mixin H1 {
+  @include Font-Styling;
+  font-size: 56px;
+  line-height: 58px;
+  letter-spacing: 2px;
+  color: $white;
+  @media screen and (max-width: 375px) {
+    font-size: 2.25rem;
+
+  }
+}
+
+@mixin H2 {
+  @include Font-Styling;
+  font-size: 40px;
+  line-height: 44px;
+  letter-spacing: 1.42857px;
+
+}
+
+@mixin H4 {
+  @include Font-Styling;
+  font-size: 28px;
+  line-height: 38px;
+  letter-spacing: 2px;
+}
+
 @mixin btn($btn) {
   padding: 0.9375rem 1.875rem;
   text-align: center;
@@ -48,12 +86,95 @@
   background-color: $background-color;
   text-align: center;
   white-space: nowrap;
-
   button {
+    @include btn($btn: word-btn);
     color: $black;
     background-color: $background-color;
-    @include btn($btn: word-btn)
   }
+}
 
+@mixin two-column-grid {
+  @include product-description-column(reg);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas: "left right";
+  gap: 8rem;
+  margin-inline: auto;
+  margin-bottom: 10rem;
+  align-items: center;
+
+  @media screen and (max-width: $md-screen) {
+    grid-template-columns: 1fr;
+    grid-template-areas: "left" "right";
+    gap: 4rem;
+    text-align: center;
+    .left {
+      grid-area: left;
+    }
+    .right {
+      grid-area: right;
+    }
+  }
+}
+
+/* used for two column layouts desc half */
+@mixin product-description-column($type) {
+  text-transform: uppercase;
+  @if $type == hero {
+    color: $white;
+    padding-left: 3rem;
+  } @else {
+    color: $black;
+  }
+  .newProductTitle {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+    mix-blend-mode: normal;
+    opacity: 0.5;
+    margin-bottom: 1.5rem;
+    @if $type == hero {
+      color: $white;
+    } @else {
+      color: $primary;
+    }
+  }
+  button {
+    @include btn(primary);
+    color: $white;
+  }
+  p {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 25px;
+    @if $type == reg {
+      color: $black;
+    } @else {
+      color: $white;
+    }
+    mix-blend-mode: normal;
+    opacity: 0.75;
+    margin-bottom: $three-element-spacing;
+  }
+  h1 {
+    @include H1;
+    margin-bottom: $two-element-spacing - .5;
+  }
+  h2 {
+    @include H2;
+    margin-bottom: $two-element-spacing - .5;
+  }
+  h4 {
+    @include H4;
+    text-transform: uppercase;
+  }
+  a {
+    text-decoration: none;
+    color: white;
+  }
 
 }

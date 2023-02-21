@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import headphonesShop from "../../public/headphones-shop.png";
-import speakersShop from "../../public/speaker-shop.png";
-import earphonesShop from "../../public/earphone-shop.png";
+import headphonesShop from "../../public/assets/shared/desktop/image-category-thumbnail-headphones.png";
+import speakersShop from "../../public/assets/shared/desktop/image-category-thumbnail-speakers.png";
+import earphonesShop from "../../public/assets/shared/desktop/image-category-thumbnail-earphones.png";
 import {motion} from "framer-motion";
 import {Prop} from "../interface/interfaces";
 

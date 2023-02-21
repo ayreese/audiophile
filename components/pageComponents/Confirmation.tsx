@@ -1,8 +1,10 @@
 import Link from "next/link";
+import Image from "next/image";
 import React, { useState } from "react";
 import { useCart } from "../../context/CartContext";
 import { formatTotal, getPrice, productName } from "../functions/cartFunctions";
 import { Products } from "../interface/interfaces";
+import check from "../../public/assets/checkout/icon-order-confirmation.svg"
 
 const Confirmation = ({ items }: Products) => {
   const shipping = 50;
@@ -14,7 +16,7 @@ const Confirmation = ({ items }: Products) => {
   return (
     <div className="confirmation-container">
       <div className="card">
-        <img src="check.png" alt="" />
+          <Image src={check} alt="success" />
         <h3>
           Thank you <br />
           for your order
@@ -28,7 +30,7 @@ const Confirmation = ({ items }: Products) => {
                   <>
                     <div key={item.id} className="items">
                       <div className="itemImg">
-                        <img src={item.image.mobile} alt="" />
+                          <Image src={item.image.mobile} alt="" width={500} height={500}/>
                       </div>
                       <div className="center">
                         <h5> {productName(item.name)}</h5>
@@ -45,7 +47,7 @@ const Confirmation = ({ items }: Products) => {
               <>
                 <div className="items">
                   <div className="itemImg">
-                    <img src={items[0].image.desktop} alt="" />
+                    <Image src={items[0].image.desktop} alt="" width={500} height={500}/>
                   </div>
                   <div className="center">
                     <h5> {productName(items[0].name)}</h5>

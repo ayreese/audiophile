@@ -1,62 +1,36 @@
 @use "../general" as *;
 
 .hero-container {
+//    @include Container;
   display: flex;
   align-items: center;
   background-color: $off-black;
-  margin-left: auto;
-  margin-right: auto;
+  background-image: url("../../public/assets/home/desktop/image-hero.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+//  height: 80vh;
 
-  .left {
-    flex: 1 1 100%;
-    text-transform: uppercase;
-    color: $white;
-    padding-left: 3rem;
-
-    p {
-      color: $white;
-    }
-
-    h1 {
-      color: $white;
-    }
-  }
-
-  .right {
-    flex: 100%;
-    min-width: 0;
-
-    img {
-      object-fit: contain;
-      max-width: 100%;
-      width: 100%;
-      height: 100%;
-    }
+  .hero-content-wrapper {
+    @include product-description-column(hero);
+    margin-block: auto;
+    padding-block: 25vh;
   }
 
   @media only screen and (max-width: 810px) {
-    .left {
-      background-image: url("../../public/headphones-hero.png");
-      background-position: center;
-      background-size: cover;
-      background-repeat: no-repeat;
+    height: auto;
+    background-image: url("../../public/assets/home/tablet/image-header.jpg");
+
+    .hero-content-wrapper {
       text-align: center;
       padding-block: 6rem;
       padding-inline: 3rem;
     }
-    .right {
-      display: none;
-    }
   }
   @media only screen and (max-width: 428px) {
-    .left {
+    .hero-content-wrapper {
       padding-top: 10rem;
       padding-inline: 1rem;
-
-      h1 {
-        font-size: 2.25rem;
-        line-height: normal;
-      }
     }
   }
 }

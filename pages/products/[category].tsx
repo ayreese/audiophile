@@ -1,6 +1,7 @@
 import React from "react";
 import { GetStaticPaths, NextPage } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import Info from "../../components/pageComponents/CompanyInfo";
 import ProductType from "../../components/pageComponents/CategoryCards";
 import data from "../../data.json";
@@ -17,17 +18,17 @@ const Details: NextPage<{ product: string }> = ({ product }) => {
         <meta name={newLocal} content="width=device-width, initial-scale=1.0" />
         <title>{elements.pageName.toUpperCase()}</title>
       </Head>
-      <div className="category-container">
+    <div className="category-container">
         <div className="page-title">
           <h1 className="homeProductTitle">{elements.pageName}</h1>
         </div>
       </div>
-      <div className="description-container">
-        {products.map((product: any) => {
+    <div className="description-container">
+        {products.slice(0).reverse().map((product: any) => {
           return (
             <div key={product.id} className="product-wrapper">
               <div className="left">
-                <img src={product.image.desktop} alt="" />
+                <Image src={product.image.desktop} alt="" width={500} height={500} layout='responsive' objectFit="contain"/>
               </div>
               <div className="right">
                 {product.new && <p className="newProductTitle">new product</p>}
