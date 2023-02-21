@@ -5,6 +5,9 @@
     box-sizing: border-box;
     padding-left: 10%;
     padding-right: 10%;
+    svg:hover {
+    color: $primary;
+    }
     .design-section {
         .design {
             background-color: $primary;
@@ -34,6 +37,9 @@
             margin-block: 1rem;
             grid-area: first;
             align-self: center;
+            &:hover {
+                color: $primary;
+            }
         }
     }
   ul {

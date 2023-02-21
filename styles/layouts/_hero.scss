@@ -1,7 +1,8 @@
 @use "../general" as *;
 
 .hero-container {
-//    @include Container;
+//    max-width: min(1600px, 100%);
+//    margin-inline: auto;
   display: flex;
   align-items: center;
   background-color: $off-black;
@@ -9,12 +10,12 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-//  height: 80vh;
 
   .hero-content-wrapper {
     @include product-description-column(hero);
     margin-block: auto;
     padding-block: 25vh;
+    width: 50%;
   }
 
   @media only screen and (max-width: 810px) {
@@ -25,6 +26,7 @@
       text-align: center;
       padding-block: 6rem;
       padding-inline: 3rem;
+      width: auto;
     }
   }
   @media only screen and (max-width: 428px) {
