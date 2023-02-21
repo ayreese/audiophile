@@ -9,7 +9,6 @@
 
     .right .buttons {
       display: flex;
-      justify-content: center;
       gap: 5%;
 
       .counter {
@@ -26,11 +25,9 @@
 
 
   @media only screen and (max-width: $md-screen) {
-
-  }
-
-  @media only screen and (max-width: $sm-screen) {
-
+    .product-wrapper.right .buttons {
+      justify-content: center;
+    }
   }
 }
 
