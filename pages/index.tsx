@@ -1,7 +1,7 @@
 import Head from "next/head";
 import type { NextPage } from "next";
 import Showcase from "../components/pageComponents/Showcase";
-import Info from "../components/pageComponents/CompanyInfo";
+import Info from "../components/pageComponents/companyInfo";
 import ProductType from "../components/pageComponents/CategoryCards";
 import Hero from "../components/pageComponents/Hero";
 

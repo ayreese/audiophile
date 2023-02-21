@@ -2,7 +2,7 @@ import React from "react";
 import { GetStaticPaths, NextPage } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import Info from "../../components/pageComponents/CompanyInfo";
+import Info from "../../components/pageComponents/companyInfo";
 import ProductType from "../../components/pageComponents/CategoryCards";
 import data from "../../data.json";
 import Head from "next/head";

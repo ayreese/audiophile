@@ -2,7 +2,7 @@ import {GetStaticPaths, GetStaticProps, NextPage} from "next";
 import Image from "next/image";
 import React, {useState} from "react";
 import {Product} from "../../components/interface/interfaces";
-import Info from "../../components/pageComponents/CompanyInfo";
+import Info from "../../components/pageComponents/companyInfo";
 import {useCart} from "../../context/CartContext";
 import ProductType from "../../components/pageComponents/CategoryCards";
 import Recommendations from "../../components/pageComponents/Recommendations";
