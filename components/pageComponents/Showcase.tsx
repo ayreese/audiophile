@@ -36,7 +36,7 @@ const Showcase = ({prop}: Prop) => {
                         transition={{delay: 0.2, duration: 1}}
                         viewport={{once: true}}>
                         <div className="description">
-                            <h4>ZX7 SPEAKER</h4>
+                            <h3>ZX7 SPEAKER</h3>
                             <Link href="/product/zx7-speaker">
                                 <a>See Products</a>
                             </Link>
@@ -51,7 +51,7 @@ const Showcase = ({prop}: Prop) => {
                         transition={{delay: 0.2, duration: 1}}
                         viewport={{once: true}}>
                         <div className="description">
-                            <h4>yx1 earphones</h4>
+                            <h3>yx1 earphones</h3>
                             <Link href="/product/yx1-earphones">
                                 <a>See Products</a>
                             </Link>
@@ -97,7 +97,7 @@ const Showcase = ({prop}: Prop) => {
                         transition={{delay: 0.2, duration: 1}}
                         viewport={{once: true}}>
                         <div className="description">
-                            <h4>ZX7 SPEAKER</h4>
+                            <h3>ZX7 SPEAKER</h3>
                             <Link href="/product/speakers/rcRLj7bkmyZeLnTWpcv8">
                                 <a>See Products</a>
                             </Link>
@@ -112,7 +112,7 @@ const Showcase = ({prop}: Prop) => {
                         transition={{delay: 0.2, duration: 1}}
                         viewport={{once: true}}>
                         <div className="description">
-                            <h4>yx1 headphones</h4>
+                            <h3>yx1 headphones</h3>
                             <Link href="/product/earphones/gDn3CJZbwZTnbttY4Yds">
                                 <a>See Products</a>
                             </Link>

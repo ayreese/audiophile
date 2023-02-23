@@ -17,9 +17,12 @@
   line-height: 58px;
   letter-spacing: 2px;
   color: $white;
-  @media screen and (max-width: 375px) {
-    font-size: 2.25rem;
-
+  @media screen and (max-width: $sm-screen) {
+    font-size: 36px;
+    line-height: 40px;
+    text-align: center;
+    letter-spacing: 1.28571px;
+    text-transform: uppercase;
   }
 }
 
@@ -28,14 +31,30 @@
   font-size: 40px;
   line-height: 44px;
   letter-spacing: 1.42857px;
-
+  @media screen and (max-width: $sm-screen) {
+    font-size: 28px;
+    line-height: 38px;
+    text-align: center;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
 }
 
-@mixin H4 {
+@mixin H3 {
   @include Font-Styling;
   font-size: 28px;
   line-height: 38px;
   letter-spacing: 2px;
+}
+
+@mixin P {
+  @include Font-Styling;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 25px;
+  mix-blend-mode: normal;
+  opacity: 0.5;
+
 }
 
 @mixin btn($btn) {
@@ -147,10 +166,7 @@
     color: $white;
   }
   p {
-    font-style: normal;
-    font-weight: 500;
-    font-size: 15px;
-    line-height: 25px;
+    @include P;
     @if $type == reg {
       color: $black;
     } @else {
@@ -162,19 +178,18 @@
   }
   h1 {
     @include H1;
-    margin-bottom: $two-element-spacing - .5;
+    margin-bottom: $two-element-spacing - 0.5;
   }
   h2 {
     @include H2;
-    margin-bottom: $two-element-spacing - .5;
+    margin-bottom: $two-element-spacing - 0.5;
   }
-  h4 {
-    @include H4;
+  h3 {
+    @include H3;
     text-transform: uppercase;
   }
   a {
     text-decoration: none;
     color: white;
   }
-
 }

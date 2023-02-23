@@ -22,7 +22,7 @@ const Recommendations = (prop: Product) => {
               <div className="imageBox">
                   <Image src={item.image.mobile} alt="" width={500}  height={500} />
               </div>
-              <h4>{item.others[0].name}</h4>
+              <h3>{item.others[0].name}</h3>
               <Link href={`/product/${item.slug}`}>
                 <button>
                   <a>See Product</a>
